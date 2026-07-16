@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FARO CAFE OPERATE - Kế Hoạch Quản Lý Nhân Viên</title>
+    
+    <!-- Framework Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        .sidebar-item-active {
+            background-color: #FAF2EB;
+            color: #7A431D;
+            border-right: 3px solid #7A431D;
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-[#FDFBF7] text-[#2A1A10] antialiased min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="bg-white text-[#2A1A10] border-b border-[#EFEAE2] px-6 py-3.5 flex items-center justify-between sticky top-0 z-50">
+        <div class="flex items-center space-x-3">
+            <span class="text-2xl text-[#7A431D]"><i class="fa-solid fa-mug-hot"></i></span>
+            <div>
+                <h1 class="font-bold text-lg tracking-wide text-[#7A431D] uppercase">FARO CAFE OPERATE</h1>
+                <p class="text-xs opacity-85 text-[#857468]">Hệ thống tối ưu hóa biên lợi nhuận & vận hành</p>
+            </div>
+        </div>
+        
+        <div class="flex items-center space-x-6">
+            <div class="relative hidden md:block">
+                <input type="text" placeholder="Tìm nhanh tính năng..." class="bg-[#FFFFFF] text-[#2A1A10] border border-[#EFEAE2] placeholder-[#2A1A10]/50 text-sm px-4 py-1.5 rounded-full focus:outline-none focus:ring-2 focus:ring-[#7A431D]/30 w-64 transition-all">
+                <i class="fa-solid fa-magnifying-glass absolute right-3 top-2.5 text-xs text-[#857468]"></i>
+            </div>
+            
+            <div class="flex items-center space-x-3 border-l border-[#EFEAE2] pl-6">
+                <!-- Avatar chuẩn Admin Faro: nền nâu chữ trắng xinh xắn -->
+                <div class="w-9 h-9 rounded-full bg-[#542E1B] text-white font-bold text-sm flex items-center justify-center border border-[#542E1B]/20 shadow-sm">
+                    AF
+                </div>
+                <div class="hidden sm:block text-left">
+                    <p class="text-sm font-semibold leading-none text-[#2A1A10]">Admin Faro</p>
+                    <span class="text-[10px] text-[#857468] opacity-85">Quản trị viên cấp cao</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTAINER -->
+    <div class="flex flex-1 overflow-hidden">
+        
+        <!-- SIDEBAR -->
+        <aside class="w-64 bg-[#FAF7F2] border-r border-[#EFEAE2] flex flex-col justify-between shrink-0 hidden md:flex">
+            <div class="py-4 pr-0 pl-4 space-y-6">
+                <!-- Hệ thống -->
+                <div class="pr-4">
+                    <span class="text-[10px] font-bold text-[#3D2513]/40 uppercase tracking-wider block px-3 mb-2">Hệ thống</span>
+                    <a href="../dashboard.html" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm text-[#3D2513]/70 hover:bg-[#FAF6F0] transition-all">
+                        <i class="fa-solid fa-chart-pie w-5 text-center text-[#7A431D]/70"></i>
+                        <span>Tổng quan dữ liệu</span>
+                    </a>
+                </div>
+
+                <!-- Quản lý Cost món -->
+                <div class="pr-4">
+                    <span class="text-[10px] font-bold text-[#7A431D] uppercase tracking-wider block px-3 mb-2">Quản lý Cost món</span>
+                    <div class="space-y-1">
+                        <a href="../quan-ly-cost/cost-nguyen-vat-lieu.html" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm text-[#3D2513]/70 hover:bg-[#FAF6F0] transition-all">
+                            <i class="fa-solid fa-leaf w-5 text-center text-[#7A431D]/70"></i>
+                            <span>Cost Nguyên Vật Liệu</span>
+                        </a>
+                        <a href="../quan-ly-cost/cost-cong-cu-dung-cu.html" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm text-[#3D2513]/70 hover:bg-[#FAF6F0] transition-all">
+                            <i class="fa-solid fa-blender w-5 text-center text-[#7A431D]/70"></i>
+                            <span>Cost Công Cụ Dụng Cụ</span>
+                        </a>
+                        <a href="../quan-ly-cost/cost-hang-ban-thang.html" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm text-[#3D2513]/70 hover:bg-[#FAF6F0] transition-all">
+                            <i class="fa-solid fa-box-open w-5 text-center text-[#7A431D]/70"></i>
+                            <span>Cost Hàng Bán Thẳng</span>
+                        </a>
+                        <a href="../quan-ly-cost/cost-ban-thanh-pham.html" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm text-[#3D2513]/70 hover:bg-[#FAF6F0] transition-all">
+                            <i class="fa-solid fa-whiskey-glass w-5 text-center text-[#7A431D]/70"></i>
+                            <span>Cost Bán Thành Phẩm</span>
+                        </a>
+                        <a href="../quan-ly-cost/cost-mon.html" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm text-[#3D2513]/70 hover:bg-[#FAF6F0] transition-all">
+                            <i class="fa-solid fa-mug-hot w-5 text-center text-[#7A431D]/70"></i>
+                            <span>Cost Món Menu</span>
+                        </a>
+                        <a href="../quan-ly-cost/ti-le-cost.html" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm text-[#3D2513]/70 hover:bg-[#FAF6F0] transition-all">
+                            <i class="fa-solid fa-percent w-5 text-center text-[#7A431D]/70"></i>
+                            <span>Tỉ Lệ Biên Lợi Nhuận</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tài liệu & Nhân sự -->
+                <div class="pr-4">
+                    <span class="text-[10px] font-bold text-[#3D2513]/40 uppercase tracking-wider block px-3 mb-2">Tài liệu & Nhân sự</span>
+                    <div class="space-y-1">
+                        <!-- Mục SOP Vận Hành -->
+                        <div class="pr-4">
+                            <a href="/pages/quan-ly-tai-lieu/sop-van-hanh.html" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm text-[#3D2513]/70 hover:bg-[#FAF6F0] transition-all">
+                                <i class="fa-solid fa-book w-5 text-center text-[#7A431D]/70"></i>
+                                <span>SOP Vận Hành</span>
+                            </a>
+                        </div>
+                        
+                        <!-- Mục Quản Lý Nhân Viên -->
+                        <div class="pr-4">
+                            <a href="/pages/quan-ly-tai-lieu/quan-ly-nhan-vien.html" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm text-[#3D2513]/70 hover:bg-[#FAF6F0] transition-all">
+                                <i class="fa-solid fa-users w-5 text-center text-[#7A431D]/70"></i>
+                                <span>Quản Lý Nhân Viên</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+            <div class="p-4 border-t border-[#EFEAE2] text-center text-xs text-[#3D2513]/40 pr-4">
+                <span>Môi trường: Production v1.0</span>
+            </div>
+        </aside>
+
+        <!-- DYNAMIC MAIN CONTENT -->
+        <main class="flex-1 p-6 overflow-y-auto space-y-6">
+            
+            <!-- BREADCRUMB & ACTION (Chống vỡ giao diện tuyệt đối) -->
+            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between pb-6 border-b border-[#EFEAE2] gap-4">
+                <div class="min-w-0 flex-1">
+                    <div class="text-xs text-[#7A431D] font-semibold mb-1 uppercase tracking-wider flex items-center gap-1">
+                        <span>Tài liệu & Nhân sự</span> <i class="fa-solid fa-chevron-right text-[9px] opacity-40"></i> <span>Quản Lý Nhân Viên</span>
+                    </div>
+                    <h2 class="text-xl sm:text-2xl font-bold text-[#2A1A10] truncate">Kế Hoạch Nâng Cấp Biệt Đội Siêu Barista 🦸‍♂️☕</h2>
+                </div>
+                
+                <div class="flex flex-wrap items-center gap-3 shrink-0">
+                    <button id="btn-sync-sheets" class="bg-white border border-[#7A431D]/30 text-[#7A431D] px-4 py-2 rounded-lg text-sm font-semibold hover:bg-[#FAF6F0] transition-all shadow-sm flex items-center space-x-2 whitespace-nowrap">
+                        <i class="fa-solid fa-arrows-rotate text-[#7A431D] id-sync-icon"></i>
+                        <span>Đồng bộ Google Sheet</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- NỘI DUNG VUI VẺ DỄ THƯƠNG -->
+            <div class="bg-gradient-to-r from-[#FAF2EB] to-[#FFFBF7] p-6 rounded-xl border border-[#EFEAE2] shadow-sm">
+                <div class="flex items-start space-x-4">
+                    <div class="text-3xl">🧸💖</div>
+                    <div>
+                        <h3 class="text-base font-bold text-[#7A431D]">Nhân viên ngoan ngoãn - Doanh thu bung nóc!</h3>
+                        <p class="text-xs text-[#857468] mt-1 leading-relaxed">
+                            Nhân sự luôn là cái nôi của những nụ cười (và đôi khi là những pha đi muộn dở khóc dở cười). Để giúp sếp quản lý dàn nam thanh nữ tú tại các chi nhánh một cách thảnh thơi nhất, phòng R&D Faro đang "bào não" để chuẩn bị ra mắt các tính năng nhân sự siêu cấp thông minh dưới đây!
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- KHU VỰC CÁC TÍNH NĂNG NHÂN SỰ ĐANG NGHIÊN CỨU TRONG THỜI GIAN TỚI -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Kế hoạch 1 -->
+                <div class="bg-white border border-[#EFEAE2] rounded-xl shadow-sm overflow-hidden flex flex-col justify-between hover:border-amber-400/40 transition-all">
+                    <div class="p-5">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-2 py-0.5 text-[10px] rounded-full bg-amber-50 text-amber-700 border border-amber-200 font-bold uppercase tracking-wider">Đang R&D mạnh mẽ</span>
+                            <span class="text-xs font-bold text-amber-600"><i class="fa-solid fa-face-laugh-beam"></i> Mood Radar</span>
+                        </div>
+                        <h4 class="font-bold text-base text-[#2A1A10]">📊 Radar Quét "Chỉ Số Hạnh Phúc" Nhân Viên</h4>
+                        <p class="text-xs text-[#857468] mt-3 leading-relaxed">
+                            Hệ thống sẽ dựa vào tốc độ nhấn máy POS và số lần cười với khách để đo xem hôm nay bạn Barista có đang thất tình hay không. Nếu chỉ số hạnh phúc tụt giảm, hệ thống sẽ tự động đề xuất: <em>"Sếp ơi, hãy tặng bạn ấy 1 ly trà sữa để hồi máu năng lượng gấp!"</em>.
+                        </p>
+                    </div>
+                    <div class="px-5 py-3.5 bg-[#FAF6F0]/40 border-t border-[#EFEAE2] flex justify-between items-center text-[11px] text-[#857468]">
+                        <span>Tiến độ: <strong class="text-amber-600">Đang test thử nghiệm (50%)</strong></span>
+                        <span class="font-bold">Dự kiến: Q4/2026</span>
+                    </div>
+                </div>
+
+                <!-- Kế hoạch 2 -->
+                <div class="bg-white border border-[#EFEAE2] rounded-xl shadow-sm overflow-hidden flex flex-col justify-between hover:border-emerald-400/40 transition-all">
+                    <div class="p-5">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-2 py-0.5 text-[10px] rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-bold uppercase tracking-wider">Đang lên ý tưởng</span>
+                            <span class="text-xs font-bold text-emerald-600"><i class="fa-solid fa-gamepad"></i> Gamification</span>
+                        </div>
+                        <h4 class="font-bold text-base text-[#2A1A10]">🎮 Hệ Thống "Cày Cấp & Nhận Danh Hiệu"</h4>
+                        <p class="text-xs text-[#857468] mt-3 leading-relaxed">
+                            Biến công việc hàng ngày thành một tựa game nhập vai! Nhân viên đi làm đúng giờ tích lũy điểm EXP. Pha được 100 ly cà phê nhận danh hiệu <em>"Thần Rót Sữa Dạo"</em>, dọn nhà vệ sinh sạch bóng nhận danh hiệu <em>"Chiến Thần Diệt Khuẩn"</em>. Cấp càng cao, thưởng cuối tháng càng yêu!
+                        </p>
+                    </div>
+                    <div class="px-5 py-3.5 bg-[#FAF6F0]/40 border-t border-[#EFEAE2] flex justify-between items-center text-[11px] text-[#857468]">
+                        <span>Tiến độ: <strong class="text-emerald-600">Thiết kế icon (20%)</strong></span>
+                        <span class="font-bold">Dự kiến: Q1/2027</span>
+                    </div>
+                </div>
+
+                <!-- Kế hoạch 3 -->
+                <div class="bg-white border border-[#EFEAE2] rounded-xl shadow-sm overflow-hidden flex flex-col justify-between hover:border-blue-400/40 transition-all">
+                    <div class="p-5">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-2 py-0.5 text-[10px] rounded-full bg-blue-50 text-blue-700 border border-blue-200 font-bold uppercase tracking-wider">Đang khảo sát</span>
+                            <span class="text-xs font-bold text-blue-600"><i class="fa-solid fa-clock"></i> Auto Schedule</span>
+                        </div>
+                        <h4 class="font-bold text-base text-[#2A1A10]">⏰ Thuật Toán Tự Xếp Lịch Tránh "Cạch Mặt"</h4>
+                        <p class="text-xs text-[#857468] mt-3 leading-relaxed">
+                            Mệt mỏi vì nhân viên giận dỗi không muốn làm chung ca? Đừng lo sếp ơi! Thuật toán AI tương lai sẽ tự động check lịch sử "tương tác xã hội" giữa các bạn, xếp lịch thông minh sao cho các cặp đôi cự cãi không bị trùng ca trực, đảm bảo không khí quầy bar lúc nào cũng hòa thuận như một gia đình.
+                        </p>
+                    </div>
+                    <div class="px-5 py-3.5 bg-[#FAF6F0]/40 border-t border-[#EFEAE2] flex justify-between items-center text-[11px] text-[#857468]">
+                        <span>Tiến độ: <strong class="text-blue-600">Nghiên cứu hành vi (15%)</strong></span>
+                        <span class="font-bold">Dự kiến: Q2/2027</span>
+                    </div>
+                </div>
+
+                <!-- Kế hoạch 4 -->
+                <div class="bg-white border border-[#EFEAE2] rounded-xl shadow-sm overflow-hidden flex flex-col justify-between hover:border-purple-400/40 transition-all">
+                    <div class="p-5">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-2 py-0.5 text-[10px] rounded-full bg-purple-50 text-purple-700 border border-purple-200 font-bold uppercase tracking-wider">Đang ủ mưu</span>
+                            <span class="text-xs font-bold text-purple-600"><i class="fa-solid fa-graduation-cap"></i> Faro Academy</span>
+                        </div>
+                        <h4 class="font-bold text-base text-[#2A1A10]">🏫 Thư Viện "Trấn Phái" Đào Tạo Siêu Tốc</h4>
+                        <p class="text-xs text-[#857468] mt-3 leading-relaxed">
+                            Hệ thống bài kiểm tra trắc nghiệm cực hài hước dành cho người mới: <em>"Khi khách hỏi pass wifi mà sếp đang đứng kế bên, bạn nên làm gì?"</em>. Giúp nhân viên mới học thuộc lòng công thức pha chế và quy trình vận hành nhanh gấp 3 lần bình thường mà không thấy chán.
+                        </p>
+                    </div>
+                    <div class="px-5 py-3.5 bg-[#FAF6F0]/40 border-t border-[#EFEAE2] flex justify-between items-center text-[11px] text-[#857468]">
+                        <span>Tiến độ: <strong class="text-purple-600">Soạn bộ câu hỏi (35%)</strong></span>
+                        <span class="font-bold">Dự kiến: Q3/2026</span>
+                    </div>
+                </div>
+
+                <!-- Kế hoạch 5 -->
+                <div class="bg-white border border-[#EFEAE2] rounded-xl shadow-sm overflow-hidden flex flex-col justify-between hover:border-rose-400/40 transition-all">
+                    <div class="p-5">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-2 py-0.5 text-[10px] rounded-full bg-rose-50 text-rose-700 border border-rose-200 font-bold uppercase tracking-wider">Mơ mộng xa xôi</span>
+                            <span class="text-xs font-bold text-rose-600"><i class="fa-solid fa-gift"></i> Auto Bonus</span>
+                        </div>
+                        <h4 class="font-bold text-base text-[#2A1A10]">🎁 Máy Phát Thưởng Tự Động "Tinh Tinh"</h4>
+                        <p class="text-xs text-[#857468] mt-3 leading-relaxed">
+                            Mỗi khi doanh thu chi nhánh vượt mốc kỳ vọng trong ngày, hệ thống sẽ tự động gửi lời chúc mừng kèm một phần thưởng nóng trị giá một cốc trà sữa vào tài khoản của các bạn đang đứng ca hôm đó. Động lực làm việc lên đỉnh điểm ngay tức thì!
+                        </p>
+                    </div>
+                    <div class="px-5 py-3.5 bg-[#FAF6F0]/40 border-t border-[#EFEAE2] flex justify-between items-center text-[11px] text-[#857468]">
+                        <span>Tiến độ: <strong class="text-rose-600">Đang xin quỹ sếp (5%)</strong></span>
+                        <span class="font-bold">Dự kiến: Q4/2027</span>
+                    </div>
+                </div>
+
+                <!-- KHU VỰC DÀNH CHO SẾP THÊM YÊU CẦU -->
+                <div class="border-2 border-dashed border-[#EFEAE2] rounded-xl flex flex-col items-center justify-center p-6 text-center bg-[#FAF6F0]/10 hover:bg-[#FAF6F0]/30 transition-all group cursor-pointer">
+                    <div class="w-12 h-12 rounded-full bg-[#FAF2EB] text-[#7A431D] flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition-all">
+                        <i class="fa-solid fa-heart-circle-plus"></i>
+                    </div>
+                    <h4 class="font-bold text-sm text-[#7A431D]">Sếp Muốn Thêm Phúc Lợi Gì Cho Các Bé?</h4>
+                    <p class="text-[11px] text-[#857468] mt-1 max-w-[220px]">
+                        Click vào đây để gửi ý tưởng quản trị nhân sự bá đạo của sếp cho chúng em triển khai nhé!
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- NÚT THÔNG BÁO CUỐI DỄ THƯƠNG -->
+            <div class="bg-white border border-[#EFEAE2] rounded-xl p-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 shadow-sm">
+                <div class="flex items-center gap-2">
+                    <span class="text-lg">👑</span>
+                    <p class="text-xs text-[#857468]">
+                        <strong>Tình hình nhân sự hôm nay:</strong> Mọi người đều đang mặc đồng phục rất xinh, đi làm đầy đủ và gửi lời chúc sếp một ngày ngập tràn niềm vui!
+                    </p>
+                </div>
+                <div class="text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200 whitespace-nowrap">
+                    Trạng thái: Ổn định & Vui tươi
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-white border-t border-[#EFEAE2] px-6 py-3 text-center text-xs text-[#857468]/50 shrink-0 flex flex-col sm:flex-row justify-between items-center gap-2">
+        <div>© 2026 <strong>Faro Cafe - Coffee Inspiration</strong>. Bảo lưu mọi quyền hệ thống.</div>
+        <div class="flex space-x-4">
+            <a href="#" class="hover:text-[#7A431D]">Chính sách bảo mật</a>
+            <span>•</span>
+            <a href="#" class="hover:text-[#7A431D]">Hỗ trợ kỹ thuật</a>
+        </div>
+    </footer>
+    <script src="../../js/main.js"></script>
+</body>
+</html>

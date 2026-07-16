@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faro Cafe Admin - Quản Lý Cost Món Menu</title>
+    
+    <!-- Framework Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Liên kết file CSS/JS dùng chung hệ thống -->
+    <link rel="stylesheet" href="../../css/custom.css">
+    <script src="../../js/main.js" defer></script>
+</head>
+<body class="bg-faro-cream text-faro-dark font-sans antialiased min-h-screen flex flex-col">
+
+    <!-- HEADER (Nền trắng tinh khôi, viền mỏng) -->
+    <header class="bg-white text-[#2A1A10] border-b border-[#EFEAE2] px-6 py-3.5 flex items-center justify-between sticky top-0 z-50">
+        <div class="flex items-center space-x-3">
+            <span class="text-2xl text-[#7A431D]"><i class="fa-solid fa-mug-hot"></i></span>
+            <div>
+                <h1 class="font-bold text-lg tracking-wide text-[#7A431D]">FARO CAFE OPERATE</h1>
+                <p class="text-xs opacity-85 text-[#857468]">Hệ thống tối ưu hóa biên lợi nhuận & vận hành</p>
+            </div>
+        </div>
+        
+        <div class="flex items-center space-x-6">
+            <div class="relative hidden md:block">
+                <input type="text" placeholder="Tìm nhanh tính năng..." class="bg-[#FFFFFF] text-[#2A1A10] border border-[#EFEAE2] placeholder-[#2A1A10]/50 text-sm px-4 py-1.5 rounded-full focus:outline-none focus:ring-2 focus:ring-[#7A431D]/30 w-64 transition-all">
+                <i class="fa-solid fa-magnifying-glass absolute right-3 top-2.5 text-xs text-[#857468]"></i>
+            </div>
+            
+            <div class="flex items-center space-x-3 border-l border-[#EFEAE2] pl-6">
+                <img src="../../images/avatar/default-admin.jpg" onerror="this.src='https://ui-avatars.com/api/?name=Admin+Faro&background=7A431D&color=FAF6F0'" alt="Avatar" class="w-9 h-9 rounded-full border-2 border-[#7A431D]/20 object-cover">
+                <div class="hidden sm:block text-left">
+                    <p class="text-sm font-semibold leading-none text-[#2A1A10]">Admin Faro</p>
+                    <span class="text-[10px] text-[#857468] opacity-85">Quản trị viên cấp cao</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTAINER -->
+    <div class="flex flex-1 overflow-hidden">
+        
+        <!-- SIDEBAR -->
+       <aside class="w-64 bg-[#FAF7F2] border-r border-[#EFEAE2] flex flex-col justify-between shrink-0 hidden md:flex">
+            <div class="py-4 pr-0 pl-4 space-y-6">
+                <!-- Hệ thống -->
+                <div class="pr-4">
+                    <span class="text-[10px] font-bold text-[#3D2513]/40 uppercase tracking-wider block px-3 mb-2">Hệ thống</span>
+                    <a href="../dashboard.html" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm text-[#3D2513]/70 hover:bg-[#FAF6F0] transition-all">
+                        <i class="fa-solid fa-chart-pie w-5 text-center text-[#7A431D]/70"></i>
+                        <span>Tổng quan dữ liệu</span>
+                    </a>
+                </div>
+
+                <!-- Quản lý Cost món -->
+                <div>
+                    <span class="text-[10px] font-bold text-[#7A431D] uppercase tracking-wider block px-3 mb-2 pr-4">Quản lý Cost món</span>
+                    <div class="space-y-1">
+                        <!-- Mẹo nhỏ: Bạn hãy cắt bớt lớp pr-4 bọc ngoài và thêm class sidebar-item-active cho trang hiện tại bạn muốn active nhé! -->
+                        <div class="pr-4">
+                            <a href="cost-nguyen-vat-lieu.html" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm text-[#3D2513]/70 hover:bg-[#FAF6F0] transition-all">
+                                <i class="fa-solid fa-leaf w-5 text-center text-[#7A431D]/70"></i>
+                                <span>Cost Nguyên Vật Liệu</span>
+                            </a>
+                        </div>
+                        <div class="pr-4">
+                            <a href="cost-cong-cu-dung-cu.html" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm text-[#3D2513]/70 hover:bg-[#FAF6F0] transition-all">
+                                <i class="fa-solid fa-blender w-5 text-center text-[#7A431D]/70"></i>
+                                <span>Cost Công Cụ Dụng Cụ</span>
+                            </a>
+                        </div>
+                        <div class="pr-4">
+                            <a href="cost-hang-ban-thang.html" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm text-[#3D2513]/70 hover:bg-[#FAF6F0] transition-all">
+                                <i class="fa-solid fa-box-open w-5 text-center text-[#7A431D]/70"></i>
+                                <span>Cost Hàng Bán Thẳng</span>
+                            </a>
+                        </div>
+                        <div class="pr-4">
+                            <a href="cost-ban-thanh-pham.html" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm text-[#3D2513]/70 hover:bg-[#FAF6F0] transition-all">
+                                <i class="fa-solid fa-whiskey-glass w-5 text-center text-[#7A431D]/70"></i>
+                                <span>Cost Bán Thành Phẩm</span>
+                            </a>
+                        </div>
+                        <div class="pr-4">
+                            <a href="cost-mon.html" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm text-[#3D2513]/70 hover:bg-[#FAF6F0] transition-all">
+                                <i class="fa-solid fa-mug-hot w-5 text-center text-[#7A431D]/70"></i>
+                                <span>Cost Món Menu</span>
+                            </a>
+                        </div>
+                        
+                        <!-- Ví dụ mẫu về menu Active (Không bọc div class="pr-4"): -->
+                        <a href="ti-le-cost.html" class="flex items-center space-x-3 pl-3 pr-4 py-2.5 text-sm  rounded-l-lg">
+                            <i class="fa-solid fa-percent w-5 text-center"></i>
+                            <span>Tỉ Lệ Biên Lợi Nhuận</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tài liệu & Nhân sự -->
+                <div class="pr-4">
+                    <span class="text-[10px] font-bold text-[#3D2513]/40 uppercase tracking-wider block px-3 mb-2">Tài liệu & Nhân sự</span>
+                    <div class="space-y-1">
+                        <a href="../quan-ly-tai-lieu/sop-van-hanh.html" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm text-[#3D2513]/70 hover:bg-[#FAF6F0] transition-all">
+                            <i class="fa-solid fa-book w-5 text-center text-[#7A431D]/70"></i>
+                            <span>SOP Vận Hành</span>
+                        </a>
+                        <a href="../quan-ly-tai-lieu/quan-ly-nhan-vien.html" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm text-[#3D2513]/70 hover:bg-[#FAF6F0] transition-all">
+                            <i class="fa-solid fa-users w-5 text-center text-[#7A431D]/70"></i>
+                            <span>Quản Lý Nhân Viên</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="p-4 border-t border-[#EFEAE2] text-center text-xs text-[#3D2513]/40 pr-4">
+                <span>Môi trường: Production v1.0</span>
+            </div>
+        </aside>
+
+        <!-- DYNAMIC MAIN CONTENT -->
+        <main class="flex-1 p-6 overflow-y-auto">
+            
+            <!-- Breadcrumb & Actions -->
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between pb-6 mb-6 border-b border-[#EFEAE2]">
+                <div>
+                    <div class="text-xs text-[#7A431D] font-semibold mb-1 uppercase tracking-wider flex items-center gap-1">
+                        <span>Quản lý Cost món Faro</span> <i class="fa-solid fa-chevron-right text-[9px] opacity-40"></i> <span>Cost Món Menu</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-[#2A1A10]">Danh Mục Giá Vốn Món Menu</h2>
+                </div>
+                <div class="flex items-center space-x-3 mt-4 sm:mt-0">
+                    <button class="bg-[#FFFFFF] border border-[#7A431D]/30 text-[#7A431D] px-4 py-2 rounded-lg text-sm font-semibold hover:bg-[#FAF6F0] transition-all shadow-sm flex items-center space-x-2">
+                        <i class="fa-solid fa-file-excel"></i>
+                        <span>Xuất Excel</span>
+                    </button>
+                    
+                    <button id="btn-sync-sheets" class="bg-[#FFFFFF] border border-[#7A431D]/30 text-[#7A431D] px-4 py-2 rounded-lg text-sm font-semibold hover:bg-[#FAF6F0] transition-all shadow-sm flex items-center space-x-2">
+                        <i class="fa-solid fa-arrows-rotate id-sync-icon"></i>
+                        <span>Đồng bộ Google Sheet</span>
+                    </button>
+
+                    <button class="btn-primary px-4 py-2 rounded-lg text-sm font-semibold shadow-sm flex items-center space-x-2">
+                        <i class="fa-solid fa-plus"></i>
+                        <span>Thêm Món Mới</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- TABLE CONTAINER -->
+            <div class="bg-white rounded-xl shadow-sm border border-[#EFEAE2] overflow-hidden">
+                <div class="p-4 bg-[#FAF6F0]/50 border-b border-[#EFEAE2] flex flex-col md:flex-row justify-between gap-3">
+                    <div class="relative max-w-sm w-full">
+                        <input type="text" placeholder="Tìm theo tên món hoặc thành phần..." class="w-full bg-white border border-[#EFEAE2] text-sm pl-9 pr-4 py-2 rounded-lg focus:outline-none focus:border-[#7A431D]">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-[#857468] text-xs"></i>
+                    </div>
+                    <div class="text-xs text-[#857468] flex items-center gap-2">
+                        <i class="fa-solid fa-circle text-emerald-500 text-[8px]"></i> Đang hiển thị chính xác cấu trúc dữ liệu tab `Cost_ThanhPham`.
+                    </div>
+                </div>
+
+                <!-- Bảng Dữ Liệu Phức Hợp -->
+                <div class="overflow-x-auto w-full">
+                    <table class="w-full border-collapse text-left text-sm border-spacing-0">
+                        <thead class="table-header-modern sticky top-0 z-10">
+                            <tr class="divide-x divide-[#EFEAE2]/30">
+                                <th class="p-3.5 font-semibold text-center w-24 text-[13px]">Mã Món</th>
+                                <th class="p-3.5 font-semibold text-[13px] w-48">Tên Món</th>
+                                <th class="p-3.5 font-semibold text-center w-28 text-[13px]">Mã Thành Phần</th>
+                                <th class="p-3.5 font-semibold text-[13px]">Tên Thành Phần (NVL hoặc BTP)</th>
+                                <th class="p-3.5 font-semibold text-center w-24 text-[13px]">Số lượng</th>
+                                <th class="p-3.5 font-semibold text-right w-28 text-[13px]">Đơn giá</th>
+                                <th class="p-3.5 font-semibold text-right w-28 text-[13px]">Thành tiền</th>
+                                <th class="p-3.5 font-semibold text-right w-32 text-[13px]">Cost Món</th>
+                                <th class="p-3.5 font-semibold text-center w-20 text-[13px]">Sửa</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-[#2A1A10] divide-y divide-[#EFEAE2]">
+                            
+                            <!-- MON001: ESPRESSO (ICE) (rowspan="2") -->
+                            <tr class="hover:bg-[#FAF6F0]/40 transition-colors">
+                                <td rowspan="2" class="p-3 text-center font-mono font-bold text-[#7A431D] bg-[#FAF6F0]/10 border-r border-[#EFEAE2] align-middle">MON001</td>
+                                <td rowspan="2" class="p-3 font-bold border-r border-[#EFEAE2] align-middle">ESPRESSO (ICE)</td>
+                                <td class="p-3 text-center font-mono text-xs"><span class="px-1.5 py-0.5 rounded bg-orange-50 text-orange-700 text-[10px] font-medium border border-orange-200">NVL001</span></td>
+                                <td class="p-3">ROBUSTA 1KG</td>
+                                <td class="p-3 text-center">18.5</td>
+                                <td class="p-3 text-right">360 đ</td>
+                                <td class="p-3 text-right">6,653 đ</td>
+                                <td rowspan="2" class="p-3 text-right font-bold text-[#7A431D] bg-[#FAF6F0]/30 border-l border-r border-[#EFEAE2] align-middle text-[15px]">6,796 đ</td>
+                                <td rowspan="2" class="p-3 text-center align-middle"><button class="text-[#7A431D] hover:text-[#2A1A10]"><i class="fa-solid fa-pen-to-square"></i></button></td>
+                            </tr>
+                            <tr class="hover:bg-[#FAF6F0]/40 transition-colors">
+                                <td class="p-3 text-center font-mono text-xs border-t border-[#EFEAE2]/60"><span class="px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-700 text-[10px] font-medium border border-emerald-200">BTP 001</span></td>
+                                <td class="p-3 border-t border-[#EFEAE2]/60">NƯỚC ĐƯỜNG</td>
+                                <td class="p-3 text-center border-t border-[#EFEAE2]/60">10</td>
+                                <td class="p-3 text-right border-t border-[#EFEAE2]/60">14 đ</td>
+                                <td class="p-3 text-right border-t border-[#EFEAE2]/60">142 đ</td>
+                            </tr>
+
+                            <!-- MON002: ESPRESSO (HOT) (rowspan="3") -->
+                            <tr class="hover:bg-[#FAF6F0]/40 transition-colors border-t-2 border-[#EFEAE2]">
+                                <td rowspan="3" class="p-3 text-center font-mono font-bold text-[#7A431D] bg-[#FAF6F0]/10 border-r border-[#EFEAE2] align-middle">MON002</td>
+                                <td rowspan="3" class="p-3 font-bold border-r border-[#EFEAE2] align-middle">ESPRESSO (HOT)</td>
+                                <td class="p-3 text-center font-mono text-xs"><span class="px-1.5 py-0.5 rounded bg-orange-50 text-orange-700 text-[10px] font-medium border border-orange-200">NVL001</span></td>
+                                <td class="p-3">ROBUSTA 1KG</td>
+                                <td class="p-3 text-center">18.5</td>
+                                <td class="p-3 text-right">360 đ</td>
+                                <td class="p-3 text-right">6,653 đ</td>
+                                <td rowspan="3" class="p-3 text-right font-bold text-[#7A431D] bg-[#FAF6F0]/30 border-l border-r border-[#EFEAE2] align-middle text-[15px]">7,623 đ</td>
+                                <td rowspan="3" class="p-3 text-center align-middle"><button class="text-[#7A431D] hover:text-[#2A1A10]"><i class="fa-solid fa-pen-to-square"></i></button></td>
+                            </tr>
+                            <tr class="hover:bg-[#FAF6F0]/40 transition-colors">
+                                <td class="p-3 text-center font-mono text-xs border-t border-[#EFEAE2]/60"><span class="px-1.5 py-0.5 rounded bg-orange-50 text-orange-700 text-[10px] font-medium border border-orange-200">NVL002</span></td>
+                                <td class="p-3 border-t border-[#EFEAE2]/60">ĐƯỜNG THANH</td>
+                                <td class="p-3 text-center border-t border-[#EFEAE2]/60">1</td>
+                                <td class="p-3 text-right border-t border-[#EFEAE2]/60">400 đ</td>
+                                <td class="p-3 text-right border-t border-[#EFEAE2]/60">400 đ</td>
+                            </tr>
+                            <tr class="hover:bg-[#FAF6F0]/40 transition-colors">
+                                <td class="p-3 text-center font-mono text-xs border-t border-[#EFEAE2]/60"><span class="px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-700 text-[10px] font-medium border border-emerald-200">BTP 025</span></td>
+                                <td class="p-3 border-t border-[#EFEAE2]/60">COOKIES CAFE</td>
+                                <td class="p-3 text-center border-t border-[#EFEAE2]/60">6.5</td>
+                                <td class="p-3 text-right border-t border-[#EFEAE2]/60">88 đ</td>
+                                <td class="p-3 text-right border-t border-[#EFEAE2]/60">570 đ</td>
+                            </tr>
+
+                            <!-- MON005: CÀ PHÊ MUỐI (rowspan="3") -->
+                            <tr class="hover:bg-[#FAF6F0]/40 transition-colors border-t-2 border-[#EFEAE2]">
+                                <td rowspan="3" class="p-3 text-center font-mono font-bold text-[#7A431D] bg-[#FAF6F0]/10 border-r border-[#EFEAE2] align-middle">MON005</td>
+                                <td rowspan="3" class="p-3 font-bold border-r border-[#EFEAE2] align-middle">CÀ PHÊ MUỐI</td>
+                                <td class="p-3 text-center font-mono text-xs"><span class="px-1.5 py-0.5 rounded bg-orange-50 text-orange-700 text-[10px] font-medium border border-orange-200">NVL001</span></td>
+                                <td class="p-3">ROBUSTA 1KG</td>
+                                <td class="p-3 text-center">18.5</td>
+                                <td class="p-3 text-right">360 đ</td>
+                                <td class="p-3 text-right">6,653 đ</td>
+                                <td rowspan="3" class="p-3 text-right font-bold text-[#7A431D] bg-[#FAF6F0]/30 border-l border-r border-[#EFEAE2] align-middle text-[15px]">11,734 đ</td>
+                                <td rowspan="3" class="p-3 text-center align-middle"><button class="text-[#7A431D] hover:text-[#2A1A10]"><i class="fa-solid fa-pen-to-square"></i></button></td>
+                            </tr>
+                            <tr class="hover:bg-[#FAF6F0]/40 transition-colors">
+                                <td class="p-3 text-center font-mono text-xs border-t border-[#EFEAE2]/60"><span class="px-1.5 py-0.5 rounded bg-orange-50 text-orange-700 text-[10px] font-medium border border-orange-200">NVL003</span></td>
+                                <td class="p-3 border-t border-[#EFEAE2]/60">SỮA ĐẶC</td>
+                                <td class="p-3 text-center border-t border-[#EFEAE2]/60">30</td>
+                                <td class="p-3 text-right border-t border-[#EFEAE2]/60">53 đ</td>
+                                <td class="p-3 text-right border-t border-[#EFEAE2]/60">1,604 đ</td>
+                            </tr>
+                            <tr class="hover:bg-[#FAF6F0]/40 transition-colors">
+                                <td class="p-3 text-center font-mono text-xs border-t border-[#EFEAE2]/60"><span class="px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-700 text-[10px] font-medium border border-emerald-200">BTP 002</span></td>
+                                <td class="p-3 border-t border-[#EFEAE2]/60">FOAM MUỐI</td>
+                                <td class="p-3 text-center border-t border-[#EFEAE2]/60">50</td>
+                                <td class="p-3 text-right border-t border-[#EFEAE2]/60">70 đ</td>
+                                <td class="p-3 text-right border-t border-[#EFEAE2]/60">3,476 đ</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Footer Phân Trang -->
+                <div class="p-4 border-t border-[#EFEAE2] flex flex-col sm:flex-row justify-between items-center gap-3 bg-[#FAF6F0]/20">
+                    <span class="text-xs text-[#857468]">Hệ thống hiển thị dữ liệu thành phẩm dựa trên tab Cost_ThanhPham</span>
+                    <div class="flex items-center space-x-1">
+                        <button class="px-2.5 py-1 border border-[#EFEAE2] rounded text-xs bg-white text-[#2A1A10]/50 hover:bg-[#FAF6F0]"><i class="fa-solid fa-chevron-left"></i></button>
+                        <button class="px-3 py-1 border border-[#7A431D] bg-[#7A431D] text-white rounded text-xs font-bold">1</button>
+                        <button class="px-2.5 py-1 border border-[#EFEAE2] rounded text-xs bg-white text-[#2A1A10]/50 hover:bg-[#FAF6F0]"><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-white border-t border-[#EFEAE2] px-6 py-3 text-center text-xs text-[#857468]/50 shrink-0 flex flex-col sm:flex-row justify-between items-center gap-2">
+        <div>© 2026 <strong>Faro Cafe - Coffee Inspiration</strong>. Bảo lưu mọi quyền hệ thống.</div>
+    </footer>
+    <script src="../js/main.js"></script>
+</body>
+</html>

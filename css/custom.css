@@ -1,0 +1,75 @@
+/* Bảng màu Modern Luxury cho Faro Cafe - Tối giản, sang trọng, tập trung vào dữ liệu */
+:root {
+  --bg-app: #FDFBF9;           /* Nền ứng dụng: Màu kem cực kỳ nhẹ, dịu mắt */
+  --bg-sidebar: #FAF7F2;       /* Nền sidebar: Màu kem thô mộc nhẹ để tách biệt với vùng nội dung */
+  --bg-card: #FFFFFF;          /* Khối nội dung & Header: Trắng tinh khiết để nổi bật dữ liệu */
+  
+  --text-main: #2A1A10;        /* Chữ chính: Nâu đen Espresso đậm, dễ đọc, không dùng màu đen kịt */
+  --text-muted: #857468;       /* Chữ phụ/Sub-text: Tông nâu đất nhạt nhẹ nhàng */
+  
+  --faro-brown: #7A431D;       /* Màu nhấn thương hiệu: Nâu cafe Faro */
+  --faro-brown-hover: #5F3214; /* Nâu đậm hơn khi hover */
+  
+  --border-color: #EFEAE2;     /* Đường viền: Tông xám kem mảnh siêu nhẹ để phân tách các khu vực */
+}
+
+/* Base reset màu toàn trang */
+body {
+  background-color: var(--bg-app);
+  color: var(--text-main);
+}
+
+/* Custom scrollbar mượt mà tinh tế */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: var(--bg-app); }
+::-webkit-scrollbar-thumb { background: #D1C7BD; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--faro-brown); }
+
+/* Lớp tiện ích màu sắc */
+.bg-faro-cream { background-color: var(--bg-app); }
+.text-faro-dark { color: var(--text-main); }
+.text-faro-brown { color: var(--faro-brown); }
+.border-faro-soft { border-color: var(--border-color); }
+
+/* Sidebar Active State: Tinh tế bằng cách dùng text màu nâu thương hiệu + vệt màu nền nhẹ thay vì ôm một cục đậm */
+.sidebar-item-active {
+  background-color: #F3ECE3 !important;
+  color: var(--faro-brown) !important;
+  font-weight: 600;
+  border-right: 3px solid var(--faro-brown);
+  border-radius: 0px 8px 8px 0px; /* Bo góc lệch tạo điểm nhấn hiện đại */
+}
+
+/* Nút bấm chủ đạo (Primary Button) */
+.btn-primary {
+  background-color: var(--faro-brown);
+  color: #FFFFFF;
+  transition: all 0.2s ease;
+}
+.btn-primary:hover {
+  background-color: var(--faro-brown-hover);
+  transform: translateY(-1px);
+}
+
+/* Table Header Custom: Trả về nền sáng hiện đại thay vì dải màu tối */
+.table-header-modern {
+  background-color: #F7F4EF;
+  color: var(--text-main);
+  border-bottom: 2px solid var(--border-color);
+}
+
+/* Hiệu ứng xoay tròn icon khi đang đồng bộ dữ liệu */
+.animate-spin-custom {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Tinh chỉnh trạng thái vô hiệu hóa nút khi đang chạy sync */
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
