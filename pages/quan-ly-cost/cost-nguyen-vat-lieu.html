@@ -135,19 +135,19 @@
                     <h2 class="text-2xl font-bold text-[#3D2513]">Danh Mục Giá Vốn Nguyên Vật Liệu</h2>
                 </div>
                 <div class="flex items-center space-x-3 mt-4 sm:mt-0">
-                    <!-- Nút xuất Excel (Giữ nguyên) -->
+                    <!-- Nút xuất Excel -->
                     <button class="bg-[#FFFFFF] border border-[#7A431D]/30 text-[#7A431D] px-4 py-2 rounded-lg text-sm font-semibold hover:bg-[#FAF6F0] transition-all shadow-sm flex items-center space-x-2">
                         <i class="fa-solid fa-file-excel"></i>
                         <span>Xuất Excel</span>
                     </button>
                     
-                    <!-- CẬP NHẬT: Nút Đồng Bộ Google Sheets (Đã đồng nhất màu viền và chữ) -->
+                    <!-- Nút Đồng Bộ Google Sheets -->
                     <button id="btn-sync-sheets" class="bg-[#FFFFFF] border border-[#7A431D]/30 text-[#7A431D] px-4 py-2 rounded-lg text-sm font-semibold hover:bg-[#FAF6F0] transition-all shadow-sm flex items-center space-x-2">
                         <i class="fa-solid fa-arrows-rotate id-sync-icon"></i>
                         <span>Đồng bộ Google Sheet</span>
                     </button>
 
-                    <!-- Nút thêm nguyên liệu (Giữ nguyên) -->
+                    <!-- Nút thêm nguyên liệu -->
                     <button class="btn-primary px-4 py-2 rounded-lg text-sm font-semibold shadow-sm flex items-center space-x-2">
                         <i class="fa-solid fa-plus"></i>
                         <span>Thêm Nguyên Liệu</span>
@@ -159,7 +159,7 @@
             <div class="bg-white rounded-xl shadow-sm border border-[#EFEAE2] overflow-hidden">
                 <div class="p-4 bg-[#FAF6F0]/50 border-b border-[#EFEAE2] flex flex-col md:flex-row justify-between gap-3">
                     <div class="relative max-w-sm w-full">
-                        <input type="text" placeholder="Lọc mã hoặc tên nguyên liệu..." class="w-full bg-white border border-[#EFEAE2] text-sm pl-9 pr-4 py-2 rounded-lg focus:outline-none focus:border-[#7A431D]">
+                        <input type="text" oninput="handleSearch(this.value)" placeholder="Lọc mã hoặc tên nguyên liệu..." class="w-full bg-white border border-[#EFEAE2] text-sm pl-9 pr-4 py-2 rounded-lg focus:outline-none focus:border-[#7A431D]">
                         <i class="fa-solid fa-filter absolute left-3 top-3 text-[#3D2513]/40 text-xs"></i>
                     </div>
                     <div class="text-xs text-[#3D2513]/60 flex items-center gap-2">
@@ -181,55 +181,18 @@
                                 <th class="p-3.5 font-semibold tracking-wide w-24 text-center text-[13px]">Hành Động</th>
                             </tr>
                         </thead>
-                        <tbody class="divide-y divide-[#EFEAE2] text-[#3D2513]">
-                            <!-- Khớp toàn bộ 100% dữ liệu gốc -->
-                            <tr class="hover:bg-[#FAF6F0]/60 transition-colors">
-                                <td class="p-3 text-center font-mono font-bold text-[#7A431D] bg-[#FAF6F0]/20">NVL001</td>
-                                <td class="p-3 font-semibold">ROBUSTA 1KG</td>
-                                <td class="p-3 text-right font-medium">359,640 đ</td>
-                                <td class="p-3 text-center">1.000</td>
-                                <td class="p-3 text-center"><span class="px-2.5 py-1 rounded bg-[#EFEAE2] text-xs font-medium">Gram</span></td>
-                                <td class="p-3 text-right font-bold text-[#7A431D] bg-[#FAF6F0]/30">360 đ</td>
-                                <td class="p-3 text-center"><button class="text-[#7A431D] hover:text-[#3D2513]"><i class="fa-solid fa-pen-to-square"></i></button></td>
-                            </tr>
-                            <tr class="hover:bg-[#FAF6F0]/60 transition-colors">
-                                <td class="p-3 text-center font-mono font-bold text-[#7A431D] bg-[#FAF6F0]/20">NVL002</td>
-                                <td class="p-3 font-semibold">ĐƯỜNG THANH</td>
-                                <td class="p-3 text-right font-medium">19,980 đ</td>
-                                <td class="p-3 text-center">50</td>
-                                <td class="p-3 text-center"><span class="px-2.5 py-1 rounded bg-[#EFEAE2] text-xs font-medium">Phần</span></td>
-                                <td class="p-3 text-right font-bold text-[#7A431D] bg-[#FAF6F0]/30">400 đ</td>
-                                <td class="p-3 text-center"><button class="text-[#7A431D] hover:text-[#3D2513]"><i class="fa-solid fa-pen-to-square"></i></button></td>
-                            </tr>
-                            <tr class="hover:bg-[#FAF6F0]/60 transition-colors">
-                                <td class="p-3 text-center font-mono font-bold text-[#7A431D] bg-[#FAF6F0]/20">NVL003</td>
-                                <td class="p-3 font-semibold">SỮA ĐẶC</td>
-                                <td class="p-3 text-right font-medium">64,167 đ</td>
-                                <td class="p-3 text-center">1.200</td>
-                                <td class="p-3 text-center"><span class="px-2.5 py-1 rounded bg-[#EFEAE2] text-xs font-medium">Gram</span></td>
-                                <td class="p-3 text-right font-bold text-[#7A431D] bg-[#FAF6F0]/30">53 đ</td>
-                                <td class="p-3 text-center"><button class="text-[#7A431D] hover:text-[#3D2513]"><i class="fa-solid fa-pen-to-square"></i></button></td>
-                            </tr>
-                            <tr class="hover:bg-[#FAF6F0]/60 transition-colors">
-                                <td class="p-3 text-center font-mono font-bold text-[#7A431D] bg-[#FAF6F0]/20">NVL004</td>
-                                <td class="p-3 font-semibold">SỮA TƯƠI MEIJI ĐỎ</td>
-                                <td class="p-3 text-right font-medium">52,812 đ</td>
-                                <td class="p-3 text-center">970</td>
-                                <td class="p-3 text-center"><span class="px-2.5 py-1 rounded bg-[#EFEAE2] text-xs font-medium">Gram</span></td>
-                                <td class="p-3 text-right font-bold text-[#7A431D] bg-[#FAF6F0]/30">54 đ</td>
-                                <td class="p-3 text-center"><button class="text-[#7A431D] hover:text-[#3D2513]"><i class="fa-solid fa-pen-to-square"></i></button></td>
-                            </tr>
+                        <!-- Đã loại bỏ các dòng hard code cũ và thêm ID để JS tự render động -->
+                        <tbody id="table-nguyen-vat-lieu-body" class="divide-y divide-[#EFEAE2] text-[#3D2513]">
                         </tbody>
                     </table>
                 </div>
 
                 <!-- Footer Pagination -->
                 <div class="p-4 border-t border-[#EFEAE2] flex flex-col sm:flex-row justify-between items-center gap-3 bg-[#FAF6F0]/20">
-                    <span class="text-xs text-[#3D2513]/60">Hiển thị 4 / 24 dòng nguyên liệu</span>
+                    <span class="text-xs text-[#3D2513]/60">Dữ liệu cập nhật tự động từ Google Sheets</span>
                     <div class="flex items-center space-x-1">
                         <button class="px-2.5 py-1 border border-[#EFEAE2] rounded text-xs bg-white text-[#3D2513]/50 hover:bg-[#FAF6F0]"><i class="fa-solid fa-chevron-left"></i></button>
                         <button class="px-3 py-1 border border-[#7A431D] bg-[#7A431D] text-white rounded text-xs font-bold">1</button>
-                        <button class="px-3 py-1 border border-[#EFEAE2] bg-white text-[#3D2513]/70 rounded text-xs hover:bg-[#FAF6F0]">2</button>
                         <button class="px-2.5 py-1 border border-[#EFEAE2] rounded text-xs bg-white text-[#3D2513]/50 hover:bg-[#FAF6F0]"><i class="fa-solid fa-chevron-right"></i></button>
                     </div>
                 </div>
@@ -246,6 +209,10 @@
             <a href="#" class="hover:text-[#7A431D]">Hỗ trợ kỹ thuật</a>
         </div>
     </footer>
-    <script src="../js/main.js"></script>
+    <!-- Nhúng file xử lý đồng bộ riêng cho trang nguyên vật liệu -->
+    <script src="../../js/sync-nguyen-vat-lieu.js"></script>
+    <script src="../../js/phan-trang.js"></script>
+    <script src="../../js/tim-kiem.js"></script>
+    <script src="../../js/main.js"></script>
 </body>
 </html>
