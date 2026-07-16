@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 3. Tự động Active Sidebar Menu theo Tên File (Bất chấp nằm ở thư mục nào)
     const currentPath = window.location.pathname;
-    const currentFileName = currentPath.split('/').pop().toLowerCase(); // Lấy tên file hiện tại (VD: quan-ly-nhan-vien.html)
+    const currentFileName = currentPath.split('/').pop().toLowerCase(); // Lấy tên file hiện tại
     
     const sidebarLinks = document.querySelectorAll("aside a[href]");
 
@@ -41,32 +41,23 @@ document.addEventListener("DOMContentLoaded", function () {
         const linkHref = link.getAttribute("href");
         if (!linkHref) return;
 
-        const linkFileName = linkHref.split('/').pop().toLowerCase(); // Lấy tên file ở thẻ a
-        const parentDiv = link.parentElement;
+        const linkFileName = linkHref.split('/').pop().toLowerCase();
 
         // So sánh trực tiếp tên file với nhau
         if (linkFileName === currentFileName && currentFileName !== "") {
-            // Active chuẩn phong cách Faro Cafe
-            link.className = "flex items-center space-x-3 pl-3 pr-4 py-2.5 text-sm sidebar-item-active rounded-l-lg";
+            // Active chuẩn: Bo tròn tất cả các góc (rounded-lg) và có border ôm trọn quanh thẻ a
+            link.className = "flex items-center space-x-3 px-3 py-2.5 text-sm rounded-lg transition-all";
             link.style.backgroundColor = "#FAF2EB";
             link.style.color = "#7A431D";
-            link.style.borderRight = "3px solid #7A431D";
+            link.style.border = "1px solid #7A431D"; // Border bao quanh 4 cạnh hoặc chỉnh theo ý muốn
             link.style.fontWeight = "600";
-
-            if (parentDiv && parentDiv.classList.contains("pr-4")) {
-                parentDiv.classList.remove("pr-4");
-            }
         } else {
             // Trạng thái bình thường
             link.className = "flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm text-[#3D2513]/70 hover:bg-[#FAF6F0] transition-all";
             link.style.backgroundColor = "";
             link.style.color = "";
-            link.style.borderRight = "";
+            link.style.border = "";
             link.style.fontWeight = "";
-
-            if (parentDiv && !parentDiv.classList.contains("pr-4")) {
-                parentDiv.classList.add("pr-4");
-            }
         }
     });
 });
