@@ -37,10 +37,10 @@ function handleSearch(keyword) {
     const filteredData = window.originalData.filter(item => {
         // Mở rộng toàn bộ các trường hợp key có thể trả về từ Google Sheets
         const maCode = removeVietnameseAccents(
-            item["Mã NVL"] || item["Mã CCDC"] || item.ma_nvl || item.ma_ccdc || item.maCCDC || item.maNvl || ""
+            item["Mã NVL"] || item["Mã CCDC"] || item.ma_nvl || item.ma_ccdc || item.maCCDC || item.maNvl || item["Mã HBT"] || item["Mã hbt"] || item.ma_hbt || item.maHBT || ""
         );
         const tenName = removeVietnameseAccents(
-            item["Tên Nguyên Vật Liệu"] || item["Tên nguyên vật liệu"] || item["Tên công cụ dụng cụ"] || item.ten_nguyen_vat_lieu || item.ten_cong_cu_dung_cu || item.tenCCDC || item.tenNvl || ""
+            item["Tên Nguyên Vật Liệu"] || item["Tên nguyên vật liệu"] || item["Tên công cụ dụng cụ"] || item.ten_nguyen_vat_lieu || item.ten_cong_cu_dung_cu || item.tenCCDC || item.tenNvl || item["Tên hàng bán thẳng"] || item["Tên Hàng Bán Thẳng"] || item.ten_hang_ban_thang || ""
         );
         
         return tenName.includes(cleanKeyword) || maCode.includes(cleanKeyword);
