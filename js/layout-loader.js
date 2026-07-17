@@ -58,3 +58,43 @@ document.addEventListener("DOMContentLoaded", async function () {
         document.body.style.opacity = "1";
     }
 });
+
+
+// Bổ sung vào file js/layout-loader.js hoặc file js dùng chung sau khi load xong component sidebar
+document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(() => {
+        const sidebar = document.getElementById('sidebar');
+        if (!sidebar) return;
+
+        // Kiểm tra xem trang hiện tại đang nằm ở cấp mấy (dựa vào số lượng dấu / trong pathname)
+        const pathSegments = window.location.pathname.split('/').filter(Boolean);
+        
+        // Nếu đang ở trang chủ (index.html hoặc root domain)
+        let depth = pathSegments.length;
+        if (window.location.pathname.endsWith('index.html') || pathSegments.length === 0) {
+            depth = 0;
+        } else if (pathSegments.includes('pages')) {
+            // Tính số cấp sâu kể từ thư mục pages
+            const pagesIdx = pathSegments.indexOf('pages');
+            depth = pathSegments.length - pagesIdx; 
+        }
+
+        // Tự động tinh chỉnh lại href cho các thẻ a trong sidebar
+        const links = sidebar.querySelectorAll('a');
+        links.forEach(link => {
+            let originalHref = link.getAttribute('href');
+            if (!originalHref) return;
+
+            // Xóa bỏ các ký tự lùi thư mục cũ nếu có để chuẩn hóa lại từ đầu
+            let cleanPath = originalHref.replace(/^(\.\.\/)+/, '').replace(/^\/+/, '');
+            
+            // Xây dựng lại đường dẫn chính xác dựa trên độ sâu thực tế
+            let prefix = '';
+            for (let i = 0; i < depth - 1; i++) {
+                prefix += '../';
+            }
+            
+            link.setAttribute('href', prefix + cleanPath);
+        });
+    }, 100);
+});
