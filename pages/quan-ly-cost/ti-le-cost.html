@@ -47,12 +47,13 @@
                         </label>
                         <select id="branch-select" onchange="toggleBranchView()" class="bg-transparent text-sm font-bold text-[#3D2513] focus:outline-none cursor-pointer max-w-[180px] sm:max-w-none truncate">
                             <option value="all">Tất cả chi nhánh (Xem tổng quan đối chiếu)</option>
-                            <option value="vp1">CN Vạn Phúc 1</option>
-                            <option value="vp2">CN Vạn Phúc 2</option>
-                            <option value="td">CN Thảo Điền</option>
-                            <option value="nt">CN Nguyễn Trãi</option>
-                            <option value="qt">CN Quang Trung</option>
-                            <option value="ct">CN Cao Thắng</option>
+                            <option value="Vạn Phúc 1">CN Vạn Phúc 1</option>
+                            <option value="Vạn Phúc 2">CN Vạn Phúc 2</option>
+                            <option value="THẢO ĐIỀN">CN Thảo Điền</option>
+                            <option value="NGUYỄN TRÃI">CN Nguyễn Trãi</option>
+                            <option value="QUANG TRUNG">CN Quang Trung</option>
+                            <option value="CAO THẮNG">CN Cao Thắng</option>
+                            <option value="KỲ ĐỒNG">CN Kỳ Đồng</option>
                         </select>
                     </div>
 
@@ -89,7 +90,7 @@
                         <span class="text-xs font-bold text-blue-600 ml-1">món</span>
                     </div>
                     <div class="text-[11px] text-blue-600 mt-2 flex items-center gap-1">
-                        <i class="fa-solid fa-star"></i> Đóng góp tỷ trọng lãi tốt
+                        <i class="fa-solid fa-star"></i> Đóng góp tỷ trọng lãi tốt (< 30%)
                     </div>
                 </div>
 
@@ -127,30 +128,7 @@
                             </tr>
                         </thead>
                         <tbody class="text-[#3D2513] divide-y divide-[#EFEAE2]">
-                            <tr class="hover:bg-[#FAF6F0]/30 transition-colors">
-                                <td class="p-3.5 font-medium text-sm">Espresso (Ice)</td>
-                                <td class="p-3.5 text-right text-gray-500 font-medium">6,796 đ</td>
-                                <td class="p-3.5 text-right font-bold text-emerald-700 text-sm">35,000 đ</td>
-                                <td class="p-3.5 text-center font-semibold text-emerald-600">19.4%</td>
-                                <td class="p-3.5 text-right font-medium">28,204 đ</td>
-                                <td class="p-3.5 text-center"><span class="px-2.5 py-1 text-[10px] rounded-full bg-blue-50 text-blue-700 border border-blue-200 font-medium">Ổn định</span></td>
-                            </tr>
-                            <tr class="hover:bg-[#FAF6F0]/30 transition-colors">
-                                <td class="p-3.5 font-medium text-sm">Cà Phê Muối</td>
-                                <td class="p-3.5 text-right text-gray-500 font-medium">11,734 đ</td>
-                                <td class="p-3.5 text-right font-bold text-emerald-700 text-sm">50,000 đ</td>
-                                <td class="p-3.5 text-center font-semibold text-emerald-600">23.4%</td>
-                                <td class="p-3.5 text-right font-medium">38,266 đ</td>
-                                <td class="p-3.5 text-center"><span class="px-2.5 py-1 text-[10px] rounded-full bg-blue-50 text-blue-700 border border-blue-200 font-medium">Ổn định</span></td>
-                            </tr>
-                            <tr class="hover:bg-[#FAF6F0]/30 transition-colors">
-                                <td class="p-3.5 font-medium text-sm">Cà Phê Latte (Hot)</td>
-                                <td class="p-3.5 text-right text-gray-500 font-medium">16,334 đ</td>
-                                <td class="p-3.5 text-right font-bold text-emerald-700 text-sm">45,000 đ</td>
-                                <td class="p-3.5 text-center font-semibold text-red-600">36.3%</td>
-                                <td class="p-3.5 text-right font-medium">28,666 đ</td>
-                                <td class="p-3.5 text-center"><span class="px-2 py-0.5 text-[10px] rounded-full bg-red-50 text-red-600 font-semibold border border-red-200 inline-flex items-center gap-1"><i class="fa-solid fa-arrow-down text-[9px]"></i> Lợi nhuận thấp</span></td>
-                            </tr>
+                            
                         </tbody>
                     </table>
                 </div>
@@ -184,65 +162,7 @@
                             </tr>
                         </thead>
                         <tbody class="text-[#3D2513] divide-y divide-[#EFEAE2] font-medium">
-                            <tr class="hover:bg-[#FAF6F0]/40 transition-colors">
-                                <td class="p-3 text-center font-mono text-gray-400 border border-[#EFEAE2]">MON001</td>
-                                <td class="p-3 border border-[#EFEAE2] font-semibold text-sm">Espresso (Ice)</td>
-                                <td class="p-3 text-right font-semibold border border-[#EFEAE2] bg-[#FAF6F0]/10 text-[#7A431D]">6,796 đ</td>
-                                <td class="p-3 text-center border border-[#EFEAE2]">
-                                    <div class="font-bold">35,000 đ</div>
-                                    <div class="text-[10px] text-emerald-600 mt-0.5">Cost: 19%</div>
-                                </td>
-                                <td class="p-3 text-center border border-[#EFEAE2]">
-                                    <div class="font-bold">35,000 đ</div>
-                                    <div class="text-[10px] text-emerald-600 mt-0.5">Cost: 19%</div>
-                                </td>
-                                <td class="p-3 text-center border border-[#EFEAE2] bg-emerald-50/20">
-                                    <div class="font-bold text-[#7A431D]">50,000 đ</div>
-                                    <div class="text-[10px] text-emerald-700 font-bold mt-0.5">Cost: 14%</div>
-                                </td>
-                                <td class="p-3 text-center border border-[#EFEAE2] bg-emerald-50/20">
-                                    <div class="font-bold text-[#7A431D]">50,000 đ</div>
-                                    <div class="text-[10px] text-emerald-700 font-bold mt-0.5">Cost: 14%</div>
-                                </td>
-                                <td class="p-3 text-center border border-[#EFEAE2]">
-                                    <div class="font-bold">35,000 đ</div>
-                                    <div class="text-[10px] text-emerald-600 mt-0.5">Cost: 19%</div>
-                                </td>
-                                <td class="p-3 text-center border border-[#EFEAE2]">
-                                    <div class="font-bold">50,000 đ</div>
-                                    <div class="text-[10px] text-emerald-600 mt-0.5">Cost: 14%</div>
-                                </td>
-                            </tr>
-
-                            <tr class="hover:bg-[#FAF6F0]/40 transition-colors">
-                                <td class="p-3 text-center font-mono text-gray-400 border border-[#EFEAE2]">MON005</td>
-                                <td class="p-3 border border-[#EFEAE2] font-semibold text-sm">Cà Phê Muối</td>
-                                <td class="p-3 text-right font-semibold border border-[#EFEAE2] bg-[#FAF6F0]/10 text-[#7A431D]">11,734 đ</td>
-                                <td class="p-3 text-center border border-[#EFEAE2]">
-                                    <div class="font-bold">50,000 đ</div>
-                                    <div class="text-[10px] text-emerald-600 mt-0.5">Cost: 23%</div>
-                                </td>
-                                <td class="p-3 text-center border border-[#EFEAE2]">
-                                    <div class="font-bold">50,000 đ</div>
-                                    <div class="text-[10px] text-emerald-600 mt-0.5">Cost: 23%</div>
-                                </td>
-                                <td class="p-3 text-center border border-[#EFEAE2] bg-emerald-50/20">
-                                    <div class="font-bold text-[#7A431D]">65,000 đ</div>
-                                    <div class="text-[10px] text-emerald-700 font-bold mt-0.5">Cost: 18%</div>
-                                </td>
-                                <td class="p-3 text-center border border-[#EFEAE2] bg-emerald-50/20">
-                                    <div class="font-bold text-[#7A431D]">65,000 đ</div>
-                                    <div class="text-[10px] text-emerald-700 font-bold mt-0.5">Cost: 18%</div>
-                                </td>
-                                <td class="p-3 text-center border border-[#EFEAE2]">
-                                    <div class="font-bold">50,000 đ</div>
-                                    <div class="text-[10px] text-emerald-600 mt-0.5">Cost: 23%</div>
-                                </td>
-                                <td class="p-3 text-center border border-[#EFEAE2]">
-                                    <div class="font-bold">65,000 đ</div>
-                                    <div class="text-[10px] text-emerald-600 mt-0.5">Cost: 18%</div>
-                                </td>
-                            </tr>
+                            
                         </tbody>
                     </table>
                 </div>
@@ -293,6 +213,7 @@
 
     <!-- Nhúng file xử lý layout chung và logic xử lý trang -->
     <script src="../../js/layout-loader.js"></script>
+    <script src="../../js/sync-ti-le-cost.js"></script>
     <script src="../../js/main.js"></script>
 </body>
 </html>

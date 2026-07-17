@@ -58,7 +58,7 @@
             <div class="bg-white rounded-xl shadow-sm border border-[#EFEAE2] overflow-hidden">
                 <div class="p-4 bg-[#FAF6F0]/50 border-b border-[#EFEAE2] flex flex-col md:flex-row justify-between gap-3">
                     <div class="relative max-w-sm w-full">
-                        <input type="text" placeholder="Tìm theo tên BTP hoặc NVL thành phần..." class="w-full bg-white border border-[#EFEAE2] text-sm pl-9 pr-4 py-2 rounded-lg focus:outline-none focus:border-[#7A431D]">
+                        <input type="text" placeholder="Tìm theo BTP hoặc NVL thành phần..." class="w-full bg-white border border-[#EFEAE2] text-sm pl-9 pr-4 py-2 rounded-lg focus:outline-none focus:border-[#7A431D]">
                         <i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-[#857468] text-xs"></i>
                     </div>
                     <div class="text-xs text-[#857468] flex items-center gap-2">
@@ -85,96 +85,7 @@
                         </thead>
                         <tbody class="text-[#2A1A10] divide-y divide-[#EFEAE2]">
                             
-                            <!-- BTP 001: NƯỚC ĐƯỜNG (Có 1 nguyên liệu) -->
-                            <tr class="hover:bg-[#FAF6F0]/40 transition-colors">
-                                <td class="p-3 text-center font-mono font-bold text-[#7A431D] bg-[#FAF6F0]/10 border-r border-[#EFEAE2]">BTP 001</td>
-                                <td class="p-3 font-bold border-r border-[#EFEAE2]">NƯỚC ĐƯỜNG</td>
-                                <td class="p-3 text-center font-mono text-xs">NVL042</td>
-                                <td class="p-3">ĐƯỜNG CÁT</td>
-                                <td class="p-3 text-right">23 đ</td>
-                                <td class="p-3 text-center">1,000</td>
-                                <td class="p-3 text-right">22,792 đ</td>
-                                <td class="p-3 text-center font-medium bg-[#FAF6F0]/10 border-l border-r border-[#EFEAE2]">1,600</td>
-                                <td class="p-3 text-right font-bold text-[#7A431D] bg-[#FAF6F0]/30 border-r border-[#EFEAE2]">14 đ</td>
-                                <td class="p-3 text-center"><button class="text-[#7A431D] hover:text-[#2A1A10]"><i class="fa-solid fa-pen-to-square"></i></button></td>
-                            </tr>
-
-                            <!-- BTP 002: FOAM MUỐI (Có 2 nguyên liệu -> dùng rowspan="2") -->
-                            <tr class="hover:bg-[#FAF6F0]/40 transition-colors">
-                                <td rowspan="2" class="p-3 text-center font-mono font-bold text-[#7A431D] bg-[#FAF6F0]/10 border-r border-[#EFEAE2] align-middle">BTP 002</td>
-                                <td rowspan="2" class="p-3 font-bold border-r border-[#EFEAE2] align-middle">FOAM MUỐI</td>
-                                <td class="p-3 text-center font-mono text-xs">NVL029</td>
-                                <td class="p-3">RICHS</td>
-                                <td class="p-3 text-right">69 đ</td>
-                                <td class="p-3 text-center">450</td>
-                                <td class="p-3 text-right">31,030 đ</td>
-                                <td rowspan="2" class="p-3 text-center font-medium bg-[#FAF6F0]/10 border-l border-r border-[#EFEAE2] align-middle">450</td>
-                                <td rowspan="2" class="p-3 text-right font-bold text-[#7A431D] bg-[#FAF6F0]/30 border-r border-[#EFEAE2] align-middle">70 đ</td>
-                                <td rowspan="2" class="p-3 text-center align-middle"><button class="text-[#7A431D] hover:text-[#2A1A10]"><i class="fa-solid fa-pen-to-square"></i></button></td>
-                            </tr>
-                            <tr class="hover:bg-[#FAF6F0]/40 transition-colors">
-                                <td class="p-3 text-center font-mono text-xs border-t border-[#EFEAE2]/60">NVL045</td>
-                                <td class="p-3 border-t border-[#EFEAE2]/60">MUỐI HỒNG</td>
-                                <td class="p-3 text-right border-t border-[#EFEAE2]/60">85 đ</td>
-                                <td class="p-3 text-center border-t border-[#EFEAE2]/60">3</td>
-                                <td class="p-3 text-right border-t border-[#EFEAE2]/60">255 đ</td>
-                            </tr>
-
-                            <!-- BTP 011: THẠCH QUẾ HOA (Có 3 nguyên liệu -> dùng rowspan="3") -->
-                            <tr class="hover:bg-[#FAF6F0]/40 transition-colors border-t-2 border-[#EFEAE2]">
-                                <td rowspan="3" class="p-3 text-center font-mono font-bold text-[#7A431D] bg-[#FAF6F0]/10 border-r border-[#EFEAE2] align-middle">BTP 011</td>
-                                <td rowspan="3" class="p-3 font-bold border-r border-[#EFEAE2] align-middle">THẠCH QUẾ HOA</td>
-                                <td class="p-3 text-center font-mono text-xs">NVL049</td>
-                                <td class="p-3">BỘT AGAR GIÒN</td>
-                                <td class="p-3 text-right">560 đ</td>
-                                <td class="p-3 text-center">50</td>
-                                <td class="p-3 text-right">28,000 đ</td>
-                                <td rowspan="3" class="p-3 text-center font-medium bg-[#FAF6F0]/10 border-l border-r border-[#EFEAE2] align-middle">6,600</td>
-                                <td rowspan="3" class="p-3 text-right font-bold text-[#7A431D] bg-[#FAF6F0]/30 border-r border-[#EFEAE2] align-middle">26 đ</td>
-                                <td rowspan="3" class="p-3 text-center align-middle"><button class="text-[#7A431D] hover:text-[#2A1A10]"><i class="fa-solid fa-pen-to-square"></i></button></td>
-                            </tr>
-                            <tr class="hover:bg-[#FAF6F0]/40 transition-colors">
-                                <td class="p-3 text-center font-mono text-xs border-t border-[#EFEAE2]/60">NVL050</td>
-                                <td class="p-3 border-t border-[#EFEAE2]/60">BỘT AGAR DẺO</td>
-                                <td class="p-3 text-right border-t border-[#EFEAE2]/60">800 đ</td>
-                                <td class="p-3 text-center border-t border-[#EFEAE2]/60">20</td>
-                                <td class="p-3 text-right border-t border-[#EFEAE2]/60">16,000 đ</td>
-                            </tr>
-                            <tr class="hover:bg-[#FAF6F0]/40 transition-colors">
-                                <td class="p-3 text-center font-mono text-xs border-t border-[#EFEAE2]/60">NVL016</td>
-                                <td class="p-3 border-t border-[#EFEAE2]/60">MỨT QUẾ HOA</td>
-                                <td class="p-3 text-right border-t border-[#EFEAE2]/60">125 đ</td>
-                                <td class="p-3 text-center border-t border-[#EFEAE2]/60">1,000</td>
-                                <td class="p-3 text-right border-t border-[#EFEAE2]/60">125,000 đ</td>
-                            </tr>
-
-                            <!-- BTP 016: BTP MỨT MÃNG CẦU NGÂM (Có 3 nguyên liệu -> dùng rowspan="3") -->
-                            <tr class="hover:bg-[#FAF6F0]/40 transition-colors border-t-2 border-[#EFEAE2]">
-                                <td rowspan="3" class="p-3 text-center font-mono font-bold text-[#7A431D] bg-[#FAF6F0]/10 border-r border-[#EFEAE2] align-middle">BTP 016</td>
-                                <td rowspan="3" class="p-3 font-bold border-r border-[#EFEAE2] align-middle">BTP MỨT MÃNG CẦU NGÂM</td>
-                                <td class="p-3 text-center font-mono text-xs">NVL054</td>
-                                <td class="p-3">MÃNG CẦU ĐÔNG LẠNH</td>
-                                <td class="p-3 text-right">96 đ</td>
-                                <td class="p-3 text-center">1,000</td>
-                                <td class="p-3 text-right">95,970 đ</td>
-                                <td rowspan="3" class="p-3 text-center font-medium bg-[#FAF6F0]/10 border-l border-r border-[#EFEAE2] align-middle">1,200</td>
-                                <td rowspan="3" class="p-3 text-right font-bold text-[#7A431D] bg-[#FAF6F0]/30 border-r border-[#EFEAE2] align-middle">86 đ</td>
-                                <td rowspan="3" class="p-3 text-center align-middle"><button class="text-[#7A431D] hover:text-[#2A1A10]"><i class="fa-solid fa-pen-to-square"></i></button></td>
-                            </tr>
-                            <tr class="hover:bg-[#FAF6F0]/40 transition-colors">
-                                <td class="p-3 text-center font-mono text-xs border-t border-[#EFEAE2]/60">NVL042</td>
-                                <td class="p-3 border-t border-[#EFEAE2]/60">ĐƯỜNG CÁT</td>
-                                <td class="p-3 text-right border-t border-[#EFEAE2]/60">23 đ</td>
-                                <td class="p-3 text-center border-t border-[#EFEAE2]/60">300</td>
-                                <td class="p-3 text-right border-t border-[#EFEAE2]/60">6,838 đ</td>
-                            </tr>
-                            <tr class="hover:bg-[#FAF6F0]/40 transition-colors">
-                                <td class="p-3 text-center font-mono text-xs border-t border-[#EFEAE2]/60">NVL055</td>
-                                <td class="p-3 border-t border-[#EFEAE2]/60">TRÀ VỎ CÀ PHÊ</td>
-                                <td class="p-3 text-right border-t border-[#EFEAE2]/60">275 đ</td>
-                                <td class="p-3 text-center border-t border-[#EFEAE2]/60">12</td>
-                                <td class="p-3 text-right border-t border-[#EFEAE2]/60">3,300 đ</td>
-                            </tr>
+                            
 
                         </tbody>
                     </table>
@@ -199,8 +110,8 @@
     <!-- Nhúng file xử lý layout chung và script logic riêng -->
     <script src="../../js/layout-loader.js"></script>
     <script src="../../js/sync-ban-thanh-pham.js"></script>
-    <script src="../../js/phan-trang.js"></script>
-    <script src="../../js/tim-kiem.js"></script>
+    <!-- <script src="../../js/phan-trang.js"></script> -->
+    <!-- <script src="../../js/tim-kiem.js"></script> -->
     <script src="../../js/main.js"></script>
 </body>
 </html>
