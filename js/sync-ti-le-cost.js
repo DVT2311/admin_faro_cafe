@@ -36,22 +36,28 @@ function removeAccents(str) {
 // 1. TẢI DỮ LIỆU TỪ GOOGLE SHEET KHI LOAD TRANG
 async function fetchBranchReportData() {
     const loadingState = document.getElementById('loading-state');
-    if (loadingState) loadingState.classList.remove('hidden'); // Hiện khi bắt đầu tải
+    
+    // Chỉ hiện loading nếu bảng chưa có dữ liệu gì
+    if (globalMenuData.length === 0 && loadingState) {
+        loadingState.classList.remove('hidden');
+    }
 
     try {
         const response = await fetch(API_URL);
         const result = await response.json();
         if (result.success && result.data) {
             globalMenuData = result.data;
-            renderAllViews(); 
+            renderAllViews(); // Render dữ liệu lên bảng
             showSyncNotification("Đồng bộ dữ liệu thành công!", "success");
         }
     } catch (error) {
         console.error("Lỗi khi đồng bộ Google Sheet:", error);
         showSyncNotification("Lỗi kết nối Google Sheet!", "error");
     } finally {
-        // Bắt buộc ẩn đi sau khi chạy xong dữ liệu
-        if (loadingState) loadingState.classList.add('hidden');
+        // Đảm bảo ẩn loading bằng mọi giá ở block finally
+        if (loadingState) {
+            loadingState.classList.add('hidden');
+        }
     }
 }
 
@@ -76,6 +82,12 @@ if (btnSyncSheets) {
 
 // 2. HÀM TÍNH TOÁN VÀ RENDER GIAO DIỆN CHUNG
 function renderAllViews() {
+    // Ẩn ngay loading nếu đã có dữ liệu render
+    const loadingState = document.getElementById('loading-state');
+    if (loadingState) {
+        loadingState.classList.add('hidden');
+    }
+
     const selectedBranch = document.getElementById('branch-select').value;
     
     if (selectedBranch === 'all') {
