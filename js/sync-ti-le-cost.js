@@ -36,29 +36,22 @@ function removeAccents(str) {
 // 1. TẢI DỮ LIỆU TỪ GOOGLE SHEET KHI LOAD TRANG
 async function fetchBranchReportData() {
     const loadingState = document.getElementById('loading-state');
-    
-    // Hiển thị lại loading nếu ấn nút đồng bộ thủ công
-    if (loadingState) {
-        loadingState.classList.remove('hidden');
-    }
+    if (loadingState) loadingState.classList.remove('hidden'); // Hiện khi bắt đầu tải
 
     try {
         const response = await fetch(API_URL);
         const result = await response.json();
-        
         if (result.success && result.data) {
             globalMenuData = result.data;
-            renderAllViews(); // Render dữ liệu lên bảng
+            renderAllViews(); 
             showSyncNotification("Đồng bộ dữ liệu thành công!", "success");
         }
     } catch (error) {
         console.error("Lỗi khi đồng bộ Google Sheet:", error);
         showSyncNotification("Lỗi kết nối Google Sheet!", "error");
     } finally {
-        // --- ẨN KHỐI LOADING SAU KHI HOÀN TẤT (Dù thành công hay thất bại) ---
-        if (loadingState) {
-            loadingState.classList.add('hidden');
-        }
+        // Bắt buộc ẩn đi sau khi chạy xong dữ liệu
+        if (loadingState) loadingState.classList.add('hidden');
     }
 }
 
