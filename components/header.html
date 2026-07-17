@@ -1,25 +1,30 @@
-<!-- HEADER (Nền kem nhẹ chủ đạo, chữ màu nâu trầm quý phái) -->
-    <header class="bg-white text-[#2A1A10] border-b border-[#EFEAE2] px-6 py-3.5 flex items-center justify-between sticky top-0 z-50">
-        <div class="flex items-center space-x-3">
-            <span class="text-2xl text-[#7A431D]"><i class="fa-solid fa-mug-hot"></i></span>
-            <div>
-                <h1 class="font-bold text-lg tracking-wide text-[#7A431D]">FARO CAFE ADMIN</h1>
-                <p class="text-xs opacity-85 text-[#615045]">Hệ thống vận hành & tối ưu hóa biên lợi nhuận </p>
-            </div>
+<!-- components/header.html -->
+<header class="bg-white text-[#2A1A10] border-b border-[#EFEAE2] px-4 md:px-6 py-3.5 flex items-center justify-between sticky top-0 z-30">
+    <div class="flex items-center space-x-3">
+        <!-- Nút Hamburger kích hoạt mở sidebar trên màn hình mobile -->
+        <button onclick="toggleMobileSidebar()" class="md:hidden text-[#7A431D] hover:bg-[#FAF6F0] p-2 rounded-lg transition-all focus:outline-none">
+            <i class="fa-solid fa-bars text-lg"></i>
+        </button>
+
+        <span class="text-2xl text-[#7A431D] hidden sm:block"><i class="fa-solid fa-mug-hot"></i></span>
+        <div>
+            <h1 class="font-bold text-base md:text-lg tracking-wide text-[#7A431D]">FARO CAFE ADMIN</h1>
+            <p class="text-[11px] md:text-xs opacity-85 text-[#615045]">Hệ thống vận hành & tối ưu hóa biên lợi nhuận</p>
+        </div>
+    </div>
+    
+    <div class="flex items-center space-x-4 md:space-x-6">
+        <div class="relative hidden md:block">
+            <input type="text" placeholder="Tìm nhanh tính năng..." class="bg-[#FFFFFF] text-[#3D2513] border border-[#EFEAE2] placeholder-[#3D2513]/50 text-sm px-4 py-1.5 rounded-full focus:outline-none focus:ring-2 focus:ring-[#7A431D]/30 w-64 transition-all">
+            <i class="fa-solid fa-magnifying-glass absolute right-3 top-2.5 text-xs text-[#3D2513]/50"></i>
         </div>
         
-        <div class="flex items-center space-x-6">
-            <div class="relative hidden md:block">
-                <input type="text" placeholder="Tìm nhanh tính năng..." class="bg-[#FFFFFF] text-[#3D2513] border border-[#EFEAE2] placeholder-[#3D2513]/50 text-sm px-4 py-1.5 rounded-full focus:outline-none focus:ring-2 focus:ring-[#7A431D]/30 w-64 transition-all">
-                <i class="fa-solid fa-magnifying-glass absolute right-3 top-2.5 text-xs text-[#3D2513]/50"></i>
-            </div>
-            
-            <div class="flex items-center space-x-3 border-l border-[#EFEAE2] pl-6">
-                <img src="../../images/avatar/default-admin.jpg" onerror="this.src='https://ui-avatars.com/api/?name=Admin+Faro&background=7A431D&color=FAF6F0'" alt="Avatar" class="w-9 h-9 rounded-full border-2 border-[#7A431D]/20 object-cover">
-                <div class="hidden sm:block text-left">
-                    <p class="text-sm font-semibold leading-none text-[#3D2513]">Admin Faro</p>
-                    <span class="text-[10px] text-[#615045] opacity-85">Quản trị viên</span>
-                </div>
+        <div class="flex items-center space-x-3 border-l border-[#EFEAE2] pl-4 md:pl-6">
+            <img src="../../images/avatar/default-admin.jpg" onerror="this.src='https://ui-avatars.com/api/?name=Admin+Faro&background=7A431D&color=FAF6F0'" alt="Avatar" class="w-9 h-9 rounded-full border-2 border-[#7A431D]/20 object-cover">
+            <div class="hidden sm:block text-left">
+                <p class="text-sm font-semibold leading-none text-[#3D2513]">Admin Faro</p>
+                <span class="text-[10px] text-[#615045] opacity-85">Quản trị viên</span>
             </div>
         </div>
-    </header>
+    </div>
+</header>

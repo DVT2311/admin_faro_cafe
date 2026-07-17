@@ -1,7 +1,18 @@
 <!-- components/sidebar.html -->
-<aside class="w-64 bg-[#FAF7F2] border-r border-[#EFEAE2] h-full flex flex-col justify-between shrink-0 hidden md:flex">
+<aside id="sidebar" class="bg-[#FAF7F2] border-r border-[#EFEAE2] h-full flex flex-col justify-between shrink-0 
+    /* --- CƠ CHẾ RESPONSIVE TÁCH BIỆT --- */
+    fixed inset-y-0 left-0 z-50 w-64 transform -translate-x-full transition-transform duration-300 ease-in-out
+    md:static md:translate-x-0 md:z-auto">
     
-    <!-- Phần nội dung menu cuộn (nếu danh sách dài) -->
+    <!-- Header thu nhỏ của sidebar chỉ hiện trên mobile (Có nút đóng X) -->
+    <div class="p-4 border-b border-[#EFEAE2] flex md:hidden items-center justify-between bg-white shrink-0">
+        <span class="font-bold text-sm text-[#7A431D]">MENU ĐIỀU HƯỚNG</span>
+        <button onclick="toggleMobileSidebar()" class="text-[#3D2513] hover:text-[#7A431D] p-1">
+            <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+    </div>
+
+    <!-- Phần nội dung menu cuộn -->
     <div class="py-4 px-3 space-y-6 overflow-y-auto flex-1">
         
         <!-- Hệ thống -->
@@ -65,3 +76,6 @@
         <span>Môi trường: Production v1.0</span>
     </div>
 </aside>
+
+<!-- Lớp nền mờ (Overlay) chỉ hoạt động trên mobile khi bật menu -->
+<div id="sidebar-overlay" onclick="toggleMobileSidebar()" class="fixed inset-0 bg-black/50 z-40 hidden md:hidden transition-opacity"></div>

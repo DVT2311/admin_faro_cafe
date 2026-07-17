@@ -71,37 +71,95 @@
                 </div>
             </div>
 
-            <!-- KPI CARDS THỐNG KÊ -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div class="bg-white p-5 rounded-xl border border-[#EFEAE2] shadow-sm flex flex-col justify-between">
-                    <span class="text-xs font-bold text-[#857468] uppercase tracking-wider">Food Cost Trung Bình</span>
-                    <div class="mt-2">
-                        <span id="kpi-food-cost" class="text-2xl font-black text-emerald-600">31.4%</span>
+            <!-- KPI CARDS THỐNG KÊ (Chia làm 2 hàng chuẩn bố cục mới) -->
+            <div class="space-y-4">
+                <!-- Hàng 1: Các chỉ số tổng quan tài chính -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="bg-white p-5 rounded-xl border border-[#EFEAE2] shadow-sm flex flex-col justify-between">
+                        <span class="text-xs font-bold text-[#857468] uppercase tracking-wider">Tổng Món</span>
+                        <div class="mt-2 flex items-baseline gap-0.5">
+                            <span id="kpi-total-items" class="text-2xl font-black text-[#3D2513]">0</span>
+                            <span class="text-xs font-bold text-[#857468] ml-1">món</span>
+                        </div>
+                        <div class="text-[11px] text-[#857468] mt-2 flex items-center gap-1">
+                            <i class="fa-solid fa-utensils"></i> Tổng danh mục món hiện hành
+                        </div>
                     </div>
-                    <div class="text-[11px] text-emerald-600 mt-2 flex items-center gap-1">
-                        <i class="fa-solid fa-circle-check"></i> Nằm trong ngưỡng an toàn (&lt; 35%)
+
+                    <div class="bg-white p-5 rounded-xl border border-[#EFEAE2] shadow-sm flex flex-col justify-between">
+                        <span class="text-xs font-bold text-[#857468] uppercase tracking-wider">Food Cost TB</span>
+                        <div class="mt-2">
+                            <span id="kpi-food-cost" class="text-2xl font-black text-emerald-600">0%</span>
+                        </div>
+                        <div class="text-[11px] text-emerald-600 mt-2 flex items-center gap-1">
+                            <i class="fa-solid fa-circle-check"></i> Tỷ lệ chi phí nguyên liệu trung bình
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-xl border border-[#EFEAE2] shadow-sm flex flex-col justify-between">
+                        <span class="text-xs font-bold text-[#857468] uppercase tracking-wider">LN Gộp TB</span>
+                        <div class="mt-2">
+                            <span id="kpi-avg-profit" class="text-2xl font-black text-blue-600">0 đ</span>
+                        </div>
+                        <div class="text-[11px] text-blue-600 mt-2 flex items-center gap-1">
+                            <i class="fa-solid fa-coins"></i> Lợi nhuận gộp trung bình mỗi món
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-xl border border-[#EFEAE2] shadow-sm flex flex-col justify-between">
+                        <span class="text-xs font-bold text-[#857468] uppercase tracking-wider">Cost TB</span>
+                        <div class="mt-2">
+                            <span id="kpi-avg-cost" class="text-2xl font-black text-[#3D2513]">0 đ</span>
+                        </div>
+                        <div class="text-[11px] text-[#857468] mt-2 flex items-center gap-1">
+                            <i class="fa-solid fa-receipt"></i> Giá vốn nguyên liệu trung bình
+                        </div>
                     </div>
                 </div>
 
-                <div class="bg-white p-5 rounded-xl border border-[#EFEAE2] shadow-sm flex flex-col justify-between">
-                    <span class="text-xs font-bold text-[#857468] uppercase tracking-wider">Món Biên Lợi Nhuận Cao</span>
-                    <div class="mt-2 flex items-baseline gap-0.5">
-                        <span id="kpi-high-profit" class="text-2xl font-black text-blue-600">18</span>
-                        <span class="text-xs font-bold text-blue-600 ml-1">món</span>
+                <!-- Hàng 2: Phân loại cơ cấu món và rủi ro -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="bg-white p-5 rounded-xl border border-[#EFEAE2] shadow-sm flex flex-col justify-between">
+                        <span class="text-xs font-bold text-blue-800 uppercase tracking-wider">LN Cao</span>
+                        <div class="mt-2 flex items-baseline gap-0.5">
+                            <span id="kpi-high-profit" class="text-2xl font-black text-blue-600">0</span>
+                            <span class="text-xs font-bold text-blue-600 ml-1">món</span>
+                        </div>
+                        <div class="text-[11px] text-blue-600 mt-2 flex items-center gap-1">
+                            <i class="fa-solid fa-star"></i> Tỷ suất lợi nhuận tốt (Cost &lt; 25%)
+                        </div>
                     </div>
-                    <div class="text-[11px] text-blue-600 mt-2 flex items-center gap-1">
-                        <i class="fa-solid fa-star"></i> Đóng góp tỷ trọng lãi tốt (< 30%)
-                    </div>
-                </div>
 
-                <div class="bg-white p-5 rounded-xl border border-[#EFEAE2] shadow-sm flex flex-col justify-between">
-                    <span class="text-xs font-bold text-red-800 uppercase tracking-wider">Món Cần Điều Chỉnh Giá</span>
-                    <div class="mt-2 flex items-baseline gap-0.5">
-                        <span id="kpi-alert-cost" class="text-2xl font-black text-red-600">3</span>
-                        <span class="text-xs font-bold text-red-600 ml-1">món</span>
+                    <div class="bg-white p-5 rounded-xl border border-[#EFEAE2] shadow-sm flex flex-col justify-between">
+                        <span class="text-xs font-bold text-amber-700 uppercase tracking-wider">Ổn Định</span>
+                        <div class="mt-2 flex items-baseline gap-0.5">
+                            <span id="kpi-mid-profit" class="text-2xl font-black text-amber-600">0</span>
+                            <span class="text-xs font-bold text-amber-600 ml-1">món</span>
+                        </div>
+                        <div class="text-[11px] text-amber-600 mt-2 flex items-center gap-1">
+                            <i class="fa-solid fa-scale-balanced"></i> Biên lợi nhuận trung bình (25% - 35%)
+                        </div>
                     </div>
-                    <div class="text-[11px] text-red-600 mt-2 flex items-center gap-1">
-                        <i class="fa-solid fa-triangle-exclamation"></i> Tỉ lệ Cost vượt ngưỡng (> 35%)
+
+                    <div class="bg-white p-5 rounded-xl border border-[#EFEAE2] shadow-sm flex flex-col justify-between">
+                        <span class="text-xs font-bold text-red-800 uppercase tracking-wider">Cần Tăng Giá</span>
+                        <div class="mt-2 flex items-baseline gap-0.5">
+                            <span id="kpi-alert-cost" class="text-2xl font-black text-red-600">0</span>
+                            <span class="text-xs font-bold text-red-600 ml-1">món</span>
+                        </div>
+                        <div class="text-[11px] text-red-600 mt-2 flex items-center gap-1">
+                            <i class="fa-solid fa-triangle-exclamation"></i> Tỉ lệ Cost vượt ngưỡng (&gt; 35%)
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-xl border border-[#EFEAE2] shadow-sm flex flex-col justify-between">
+                        <span class="text-xs font-bold text-purple-800 uppercase tracking-wider">Risk Cost</span>
+                        <div class="mt-2">
+                            <span id="kpi-risk-cost" class="text-2xl font-black text-purple-600">+0%</span>
+                        </div>
+                        <div class="text-[11px] text-purple-600 mt-2 flex items-center gap-1">
+                            <i class="fa-solid fa-chart-line"></i> Chỉ số biên độ dao động rủi ro
+                        </div>
                     </div>
                 </div>
             </div>
@@ -112,7 +170,17 @@
                     <h3 class="font-bold text-[#3D2513] flex items-center gap-2 text-xs uppercase tracking-wide">
                         <i class="fa-solid fa-list-check text-[#7A431D]"></i> Biểu giá chi tiết tại cơ sở lựa chọn
                     </h3>
-                    <span class="text-[11px] text-[#857468]">Màu sắc cảnh báo tự động theo biên lợi nhuận</span>
+                    
+                    <!-- Ô TÌM KIẾM DÀNH CHO CHI NHÁNH ĐƠN -->
+                    <div class="flex items-center gap-3">
+                        <div class="relative">
+                            <span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-400">
+                                <i class="fa-solid fa-magnifying-glass text-xs"></i>
+                            </span>
+                            <input type="text" id="single-branch-search" placeholder="Tìm tên món tại chi nhánh..." class="pl-8 pr-4 py-1.5 text-xs bg-white border border-[#EFEAE2] rounded-lg focus:outline-none focus:border-[#7A431D] w-64 shadow-sm">
+                        </div>
+                        <!-- <span class="text-[11px] text-[#857468]">Màu sắc cảnh báo tự động theo biên lợi nhuận</span> -->
+                    </div>
                 </div>
                 
                 <div class="overflow-x-auto custom-scrollbar">
@@ -132,7 +200,17 @@
                         </tbody>
                     </table>
                 </div>
-            </div>
+
+                <!-- KHUNG PHÂN TRANG CHO CHI NHÁNH ĐƠN LẺ -->
+                <div class="flex items-center justify-between px-4 py-3 bg-white border-t border-[#EFEAE2]">
+                    <div id="single-pagination-info" class="text-xs text-gray-500">
+                        Hiển thị 0 - 0 của 0 món
+                    </div>
+                    <div id="single-pagination-buttons" class="flex items-center gap-1">
+                        <!-- Các nút bấm phân trang sẽ được JS tự động điền vào đây -->
+                    </div>
+                </div>
+            </div> 
 
             <!-- CHẾ ĐỘ 2: VIEW TỔNG QUAN MA TRẬN ĐỐI CHIẾU TOÀN CƠ SỞ -->
             <div id="all-branches-container" class="bg-white rounded-xl shadow-sm border border-[#EFEAE2] overflow-hidden">
@@ -166,50 +244,21 @@
                         </tbody>
                     </table>
                 </div>
+
+                <!-- Thanh Phân Trang Cho Chế Độ Tất Cả Chi Nhánh -->
+                <div id="all-pagination" class="p-4 bg-[#FAF6F0]/30 border-t border-[#EFEAE2] flex items-center justify-between text-xs">
+                    <span class="text-[#857468]" id="all-pagination-info">Hiển thị 0 - 0 của 0 món</span>
+                    <div class="flex items-center space-x-1" id="all-pagination-buttons">
+                        <!-- Nút phân trang render bằng JS -->
+                    </div>
+                </div>
+                
             </div>
         </main>
     </div>
 
     <!-- FOOTER SẼ ĐƯỢC RENDER TỰ ĐỘNG VÀO ĐÂY -->
     <div id="footer-container" class="flex-shrink-0"></div>
-
-    <!-- INTERACTIVE JAVASCRIPT -->
-    <script>
-        function toggleBranchView() {
-            const select = document.getElementById('branch-select');
-            const singleView = document.getElementById('single-branch-container');
-            const allView = document.getElementById('all-branches-container');
-            
-            const kpiFoodCost = document.getElementById('kpi-food-cost');
-            const kpiHighProfit = document.getElementById('kpi-high-profit');
-            const kpiAlertCost = document.getElementById('kpi-alert-cost');
-
-            if (select.value === 'all') {
-                singleView.classList.add('hidden');
-                allView.classList.remove('hidden');
-                
-                kpiFoodCost.innerText = "31.4%";
-                kpiFoodCost.className = "text-2xl font-black text-emerald-600";
-                kpiHighProfit.innerText = "18";
-                kpiAlertCost.innerText = "3";
-            } else {
-                allView.classList.add('hidden');
-                singleView.classList.remove('hidden');
-                
-                if(select.value === 'vp1' || select.value === 'vp2' || select.value === 'qt') {
-                    kpiFoodCost.innerText = "35.2%";
-                    kpiFoodCost.className = "text-2xl font-black text-red-600";
-                    kpiHighProfit.innerText = "12";
-                    kpiAlertCost.innerText = "3";
-                } else {
-                    kpiFoodCost.innerText = "24.5%";
-                    kpiFoodCost.className = "text-2xl font-black text-emerald-600";
-                    kpiHighProfit.innerText = "22";
-                    kpiAlertCost.innerText = "0";
-                }
-            }
-        }
-    </script>
 
     <!-- Nhúng file xử lý layout chung và logic xử lý trang -->
     <script src="../../js/layout-loader.js"></script>
