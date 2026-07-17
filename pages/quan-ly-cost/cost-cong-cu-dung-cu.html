@@ -13,118 +13,20 @@
     
     <!-- Liên kết các file CSS/JS bóc tách dùng chung hệ thống -->
     <link rel="stylesheet" href="../../css/custom.css">
-    <script src="../../js/main.js" defer></script>
 </head>
-<body class="bg-faro-cream text-faro-dark font-sans antialiased min-h-screen flex flex-col">
+<body class="bg-faro-cream text-faro-dark font-sans antialiased h-screen flex flex-col overflow-hidden">
 
-    <!-- HEADER (Nền trắng tinh khôi, viền mỏng) -->
-    <header class="bg-white text-[#2A1A10] border-b border-[#EFEAE2] px-6 py-3.5 flex items-center justify-between sticky top-0 z-50">
-        <div class="flex items-center space-x-3">
-            <span class="text-2xl text-[#7A431D]"><i class="fa-solid fa-mug-hot"></i></span>
-            <div>
-                <h1 class="font-bold text-lg tracking-wide text-[#7A431D]">FARO CAFE OPERATE</h1>
-                <p class="text-xs opacity-85 text-[#857468]">Hệ thống tối ưu hóa biên lợi nhuận & vận hành</p>
-            </div>
-        </div>
-        
-        <div class="flex items-center space-x-6">
-            <div class="relative hidden md:block">
-                <input type="text" placeholder="Tìm nhanh tính năng..." class="bg-[#FFFFFF] text-[#2A1A10] border border-[#EFEAE2] placeholder-[#2A1A10]/50 text-sm px-4 py-1.5 rounded-full focus:outline-none focus:ring-2 focus:ring-[#7A431D]/30 w-64 transition-all">
-                <i class="fa-solid fa-magnifying-glass absolute right-3 top-2.5 text-xs text-[#857468]"></i>
-            </div>
-            
-            <div class="flex items-center space-x-3 border-l border-[#EFEAE2] pl-6">
-                <img src="../../images/avatar/default-admin.jpg" onerror="this.src='https://ui-avatars.com/api/?name=Admin+Faro&background=7A431D&color=FAF6F0'" alt="Avatar" class="w-9 h-9 rounded-full border-2 border-[#7A431D]/20 object-cover">
-                <div class="hidden sm:block text-left">
-                    <p class="text-sm font-semibold leading-none text-[#2A1A10]">Admin Faro</p>
-                    <span class="text-[10px] text-[#857468] opacity-85">Quản trị viên cấp cao</span>
-                </div>
-            </div>
-        </div>
-    </header>
+    <!-- HEADER SẼ ĐƯỢC RENDER TỰ ĐỘNG VÀO ĐÂY -->
+    <div id="header-container" class="flex-shrink-0"></div>
 
     <!-- MAIN CONTAINER -->
-    <div class="flex flex-1 overflow-hidden">
+    <div class="flex flex-1 overflow-hidden w-full">
         
-        <!-- SIDEBAR (Nền kem thô mộc nhẹ tương phản) -->
-       <aside class="w-64 bg-[#FAF7F2] border-r border-[#EFEAE2] flex flex-col justify-between shrink-0 hidden md:flex">
-            <div class="py-4 pr-0 pl-4 space-y-6">
-                <!-- Hệ thống -->
-                <div class="pr-4">
-                    <span class="text-[10px] font-bold text-[#3D2513]/40 uppercase tracking-wider block px-3 mb-2">Hệ thống</span>
-                    <a href="../dashboard.html" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm text-[#3D2513]/70 hover:bg-[#FAF6F0] transition-all">
-                        <i class="fa-solid fa-chart-pie w-5 text-center text-[#7A431D]/70"></i>
-                        <span>Tổng quan dữ liệu</span>
-                    </a>
-                </div>
+        <!-- SIDEBAR SẼ ĐƯỢC RENDER TỰ ĐỘNG VÀO ĐÂY -->
+        <div id="sidebar-container" class="h-full flex-shrink-0"></div>
 
-                <!-- Quản lý Cost món -->
-                <div>
-                    <span class="text-[10px] font-bold text-[#7A431D] uppercase tracking-wider block px-3 mb-2 pr-4">Quản lý Cost món</span>
-                    <div class="space-y-1">
-                        <!-- Mẹo nhỏ: Bạn hãy cắt bớt lớp pr-4 bọc ngoài và thêm class sidebar-item-active cho trang hiện tại bạn muốn active nhé! -->
-                        <div class="pr-4">
-                            <a href="cost-nguyen-vat-lieu.html" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm text-[#3D2513]/70 hover:bg-[#FAF6F0] transition-all">
-                                <i class="fa-solid fa-leaf w-5 text-center text-[#7A431D]/70"></i>
-                                <span>Cost Nguyên Vật Liệu</span>
-                            </a>
-                        </div>
-                        <div class="pr-4">
-                            <a href="cost-cong-cu-dung-cu.html" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm text-[#3D2513]/70 hover:bg-[#FAF6F0] transition-all">
-                                <i class="fa-solid fa-blender w-5 text-center text-[#7A431D]/70"></i>
-                                <span>Cost Công Cụ Dụng Cụ</span>
-                            </a>
-                        </div>
-                        <div class="pr-4">
-                            <a href="cost-hang-ban-thang.html" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm text-[#3D2513]/70 hover:bg-[#FAF6F0] transition-all">
-                                <i class="fa-solid fa-box-open w-5 text-center text-[#7A431D]/70"></i>
-                                <span>Cost Hàng Bán Thẳng</span>
-                            </a>
-                        </div>
-                        <div class="pr-4">
-                            <a href="cost-ban-thanh-pham.html" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm text-[#3D2513]/70 hover:bg-[#FAF6F0] transition-all">
-                                <i class="fa-solid fa-whiskey-glass w-5 text-center text-[#7A431D]/70"></i>
-                                <span>Cost Bán Thành Phẩm</span>
-                            </a>
-                        </div>
-                        <div class="pr-4">
-                            <a href="cost-mon.html" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm text-[#3D2513]/70 hover:bg-[#FAF6F0] transition-all">
-                                <i class="fa-solid fa-mug-hot w-5 text-center text-[#7A431D]/70"></i>
-                                <span>Cost Món Menu</span>
-                            </a>
-                        </div>
-                        
-                        <!-- Ví dụ mẫu về menu Active (Không bọc div class="pr-4"): -->
-                        <a href="ti-le-cost.html" class="flex items-center space-x-3 pl-3 pr-4 py-2.5 text-sm  rounded-l-lg">
-                            <i class="fa-solid fa-percent w-5 text-center"></i>
-                            <span>Tỉ Lệ Biên Lợi Nhuận</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Tài liệu & Nhân sự -->
-                <div class="pr-4">
-                    <span class="text-[10px] font-bold text-[#3D2513]/40 uppercase tracking-wider block px-3 mb-2">Tài liệu & Nhân sự</span>
-                    <div class="space-y-1">
-                        <a href="../quan-ly-tai-lieu/sop-van-hanh.html" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm text-[#3D2513]/70 hover:bg-[#FAF6F0] transition-all">
-                            <i class="fa-solid fa-book w-5 text-center text-[#7A431D]/70"></i>
-                            <span>SOP Vận Hành</span>
-                        </a>
-                        <a href="../quan-ly-tai-lieu/quan-ly-nhan-vien.html" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm text-[#3D2513]/70 hover:bg-[#FAF6F0] transition-all">
-                            <i class="fa-solid fa-users w-5 text-center text-[#7A431D]/70"></i>
-                            <span>Quản Lý Nhân Viên</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="p-4 border-t border-[#EFEAE2] text-center text-xs text-[#3D2513]/40 pr-4">
-                <span>Môi trường: Production v1.0</span>
-            </div>
-        </aside> 
-
-        <!-- DYNAMIC MAIN CONTENT -->
-        <main class="flex-1 p-6 overflow-y-auto">
+        <!-- DYNAMIC MAIN CONTENT (Vùng ruột thay đổi linh hoạt) -->
+        <main class="flex-1 h-full overflow-y-auto p-6">
             
             <!-- Breadcrumb & Actions -->
             <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between pb-6 mb-6 border-b border-[#EFEAE2]">
@@ -132,19 +34,22 @@
                     <div class="text-xs text-[#7A431D] font-semibold mb-1 uppercase tracking-wider flex items-center gap-1">
                         <span>Quản lý Cost món Faro</span> <i class="fa-solid fa-chevron-right text-[9px] opacity-40"></i> <span>Công cụ dụng cụ</span>
                     </div>
-                    <h2 class="text-2xl font-bold text-[#2A1A10]">Danh Mục Giá Vốn Công Cụ Dụng Cụ</h2>
+                    <h2 class="text-2xl font-bold text-[#3D2513]">Danh Mục Giá Vốn Công Cụ Dụng Cụ</h2>
                 </div>
                 <div class="flex items-center space-x-3 mt-4 sm:mt-0">
+                    <!-- Nút xuất Excel -->
                     <button class="bg-[#FFFFFF] border border-[#7A431D]/30 text-[#7A431D] px-4 py-2 rounded-lg text-sm font-semibold hover:bg-[#FAF6F0] transition-all shadow-sm flex items-center space-x-2">
                         <i class="fa-solid fa-file-excel"></i>
                         <span>Xuất Excel</span>
                     </button>
                     
+                    <!-- Nút Đồng Bộ Google Sheets -->
                     <button id="btn-sync-sheets" class="bg-[#FFFFFF] border border-[#7A431D]/30 text-[#7A431D] px-4 py-2 rounded-lg text-sm font-semibold hover:bg-[#FAF6F0] transition-all shadow-sm flex items-center space-x-2">
                         <i class="fa-solid fa-arrows-rotate id-sync-icon"></i>
                         <span>Đồng bộ Google Sheet</span>
                     </button>
 
+                    <!-- Nút thêm CCDC -->
                     <button class="btn-primary px-4 py-2 rounded-lg text-sm font-semibold shadow-sm flex items-center space-x-2">
                         <i class="fa-solid fa-plus"></i>
                         <span>Thêm CCDC</span>
@@ -156,15 +61,15 @@
             <div class="bg-white rounded-xl shadow-sm border border-[#EFEAE2] overflow-hidden">
                 <div class="p-4 bg-[#FAF6F0]/50 border-b border-[#EFEAE2] flex flex-col md:flex-row justify-between gap-3">
                     <div class="relative max-w-sm w-full">
-                        <input type="text" placeholder="Lọc mã hoặc tên CCDC..." class="w-full bg-white border border-[#EFEAE2] text-sm pl-9 pr-4 py-2 rounded-lg focus:outline-none focus:border-[#7A431D]">
-                        <i class="fa-solid fa-filter absolute left-3 top-3 text-[#857468] text-xs"></i>
+                        <input type="text" oninput="handleSearch(this.value)" placeholder="Lọc mã hoặc tên CCDC..." class="w-full bg-white border border-[#EFEAE2] text-sm pl-9 pr-4 py-2 rounded-lg focus:outline-none focus:border-[#7A431D]">
+                        <i class="fa-solid fa-filter absolute left-3 top-3 text-[#3D2513]/40 text-xs"></i>
                     </div>
-                    <div class="text-xs text-[#857468] flex items-center gap-2">
+                    <div class="text-xs text-[#3D2513]/60 flex items-center gap-2">
                         <i class="fa-solid fa-circle text-emerald-500 text-[8px]"></i> Lấy dữ liệu trực tiếp từ tab công cụ dụng cụ (DM_CCDC).
                     </div>
                 </div>
 
-            <!-- Bảng hiển thị dữ liệu thực tế Công Cụ Dụng Cụ -->
+                <!-- Bảng hiển thị dữ liệu thực tế Công Cụ Dụng Cụ -->
                 <div class="overflow-x-auto w-full">
                     <table class="w-full border-collapse text-left text-sm">
                         <thead class="table-header-modern">
@@ -178,13 +83,12 @@
                                 <th class="p-3.5 font-semibold tracking-wide w-24 text-center text-[13px]">Hành Động</th>
                             </tr>
                         </thead>
-                        <!-- Đã xóa hard code, thêm ID nhận diện -->
                         <tbody id="table-cong-cu-dung-cu-body" class="divide-y divide-[#EFEAE2] text-[#3D2513]">
                         </tbody>
                     </table>
                 </div>
 
-                <!-- Đảm bảo Footer Pagination có ID chứa nút phân trang nếu ở trang NVL bạn đã đặt -->
+                <!-- Footer Pagination -->
                 <div class="p-4 border-t border-[#EFEAE2] flex flex-col sm:flex-row justify-between items-center gap-3 bg-[#FAF6F0]/20">
                     <span class="text-xs text-[#3D2513]/60">Dữ liệu cập nhật tự động từ Google Sheets</span>
                     <div id="pagination-controls" class="flex items-center space-x-1"></div>
@@ -193,20 +97,14 @@
         </main>
     </div>
 
-    <!-- FOOTER -->
-    <footer class="bg-white border-t border-[#EFEAE2] px-6 py-3 text-center text-xs text-[#857468]/50 shrink-0 flex flex-col sm:flex-row justify-between items-center gap-2">
-        <div>© 2026 <strong>Faro Cafe - Coffee Inspiration</strong>. Bảo lưu mọi quyền hệ thống.</div>
-        <div class="flex space-x-4">
-            <a href="#" class="hover:text-[#7A431D]">Chính sách bảo mật</a>
-            <span>•</span>
-            <a href="#" class="hover:text-[#7A431D]">Hỗ trợ kỹ thuật</a>
-        </div>
-    </footer>
+    <!-- FOOTER SẼ ĐƯỢC RENDER TỰ ĐỘNG VÀO ĐÂY -->
+    <div id="footer-container" class="flex-shrink-0"></div>
+
+    <!-- Nhúng file xử lý layout và logic riêng cho trang CCDC -->
+    <script src="../../js/layout-loader.js"></script>
     <script src="../../js/sync-cong-cu-dung-cu.js"></script>
     <script src="../../js/phan-trang.js"></script>
     <script src="../../js/tim-kiem.js"></script>
     <script src="../../js/main.js"></script>
-</body>
-</html>
 </body>
 </html>
